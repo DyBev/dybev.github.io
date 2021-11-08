@@ -1,0 +1,27 @@
+
+const sections = document.querySelectorAll("div.container2 section");
+const navLi = document.querySelectorAll("nav .container li");
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionLeft = section.offsetLeft;
+    const sectionWidth = section.clientWidth;
+    if (scrollX >= sectionLeft - sectionWidth / 8) {
+      current = section.getAttribute("id");
+    }
+    console.log(scrollX);
+  });
+
+  navLi.forEach((li) => {
+    li.classList.remove("active");
+    if (li.classList.contains(current)) {
+      li.classList.add("active");
+    }
+  });
+});
+
+$(function() {
+    $("body").mousewheel(function(evt, chg) {
+       this.scrollLeft -= (chg * 650); //need a value to speed up the change
+    });
+ });
