@@ -119,18 +119,6 @@ nav .container li a {
     flex-wrap: nowrap;
 }
 
-#wales2021{
-    /* background-color: papayawhip; */
-}
-
-#portugal2021{
-    /* background-color: palegoldenrod; */
-}
-
-#footer {
-    /* background-color: paleturquoise; */
-}
-
 #title_container {
     position: fixed;
     display: flex;
