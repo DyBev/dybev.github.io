@@ -20,8 +20,14 @@ window.addEventListener("scroll", () => {
   });
 });
 
-$(function() {
-    $("body").mousewheel(function(evt, chg) {
-       this.scrollLeft -= (chg * 650); //need a value to speed up the change
-    });
- });
+function transformScroll(event) {
+  if (!event.deltaY) {
+    return;
+  }
+
+  event.currentTarget.scrollLeft += event.deltaY * 3 + event.deltaX;
+  event.preventDefault();
+}
+
+var element = document.scrollingElement || document.documentElement;
+element.addEventListener('wheel', transformScroll);
