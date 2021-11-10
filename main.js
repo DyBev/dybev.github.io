@@ -1,6 +1,6 @@
-
 const sections = document.querySelectorAll("div.container2 section");
 const navLi = document.querySelectorAll("nav .container li");
+
 window.addEventListener("scroll", () => {
   let current = "";
   sections.forEach((section) => {
@@ -9,7 +9,6 @@ window.addEventListener("scroll", () => {
     if (scrollX >= sectionLeft - sectionWidth / 8) {
       current = section.getAttribute("id");
     }
-    console.log(scrollX);
   });
 
   navLi.forEach((li) => {
@@ -19,6 +18,7 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
 
 function transformScroll(event) {
   if (!event.deltaY) {
