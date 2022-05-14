@@ -11,13 +11,13 @@
     }
   
   *::-webkit-scrollbar-track {
-  background: whitesmoke;
+  background: #A9D0DB;
     }
   
   *::-webkit-scrollbar-thumb {
     background-color: #d1d1d1;
     border-radius: 35px;
-    border: 3px solid whitesmoke;
+    border: 3px solid #A9D0DB;
     }
   
 html {
@@ -48,11 +48,13 @@ nav {
 
 #collections_date {
     font-size: .75vw;
+    color: #323032;
     font-family: 'Noto Serif display', serif;
     font-weight: 350;
     }
 h2 {
     margin: 0px;
+    color: #323032;
     font-size: 1vw;
     font-family: 'Noto Serif display', serif;
     font-weight: 350;
@@ -66,8 +68,36 @@ section {
     justify-content: center;
     text-transform: uppercase;
     }
+#malaysia2019 {
+    height: 75vh;
+    padding-top: 0vh;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+#portugal2019 {
+    height: 75vh;
+    padding-top: 0vh;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+#wales2019 {
+    height: 75vh;
+    padding-top: 0vh;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
 p {
     max-height: 65vh;
+    color: #323032;
     word-wrap: normal;
     overflow-x: auto;
     overflow-y: hidden;
@@ -78,7 +108,7 @@ img {
 }
 nav .container li.active {
     transform: scale(1.1);
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(233, 233, 233);
     transition: 0.3s ease transform;
     }
 nav .container li {
@@ -119,6 +149,18 @@ nav .container li a {
     flex-wrap: nowrap;
 }
 
+#wales2021{
+    /* background-color: papayawhip; */
+}
+
+#portugal2021{
+    /* background-color: palegoldenrod; */
+}
+
+#footer {
+    /* background-color: paleturquoise; */
+}
+
 #title_container {
     position: fixed;
     display: flex;
@@ -129,6 +171,7 @@ nav .container li a {
 
 h1 {
     margin: 0px;
+    color: #323032;
     font-size: 3vw;
     font-family: 'Noto Serif display', serif;
     font-weight: 350;

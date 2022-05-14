@@ -25,7 +25,7 @@ function transformScroll(event) {
     return;
   }
 
-  event.currentTarget.scrollLeft += event.deltaY * 3 + event.deltaX;
+  event.currentTarget.scrollLeft += event.deltaY *3 + event.deltaX;
   event.preventDefault();
 }
 
