@@ -1,0 +1,20 @@
+.main-box{
+    align-content: center;
+}
+
+.photoboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 75vw;
+    margin-inline: auto;
+    margin-top: 10vh;
+}
+
+.photoboard img{
+    height: clamp( 30vh, 40vh, 50vh);
+    flex-grow: .5;
+    object-fit: cover;
+    border: solid white 5px;
+}
