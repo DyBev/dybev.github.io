@@ -1,3 +1,7 @@
+:root{
+    overflow-y: auto;
+}
+
 .main-box{
     align-content: center;
 }

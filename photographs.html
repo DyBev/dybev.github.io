@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="photographs.css">
+
     <meta name="viewport" content="width=[widest centered div];"/>
+    <script defer src="node_modules\swup\dist\swup.min.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
     <head>
         <title>Dylan's Photographs </title>
-        <style>
-            :root {
-                overflow-y: auto;
-            }
-        </style>
     </head>
     <body>
-        <div class="main-box">
+        <main id="swup" class="main-box transition-translate">
+            <link rel="stylesheet" href="photographs.css">
             <div class="title-card">
                 <a href="/">
                     <h1>DYLAN BEVAN</h1>
@@ -61,6 +60,6 @@
                 <img src="https://i.imgur.com/iVzgc0p.jpg"  > 
                 <img src="https://i.imgur.com/DBbJLOoh.jpg" > 
             </div>
-        </div>
+        </main>
     </body>
 </html>
