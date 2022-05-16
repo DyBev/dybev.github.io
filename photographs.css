@@ -7,14 +7,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
-    width: 75vw;
+    width: clamp( 548.25px, 75vw, 100vw);
     margin-inline: auto;
     margin-top: 10vh;
 }
 
 .photoboard img{
-    height: clamp( 30vh, 40vh, 50vh);
-    flex-grow: .5;
+    height: clamp( 10vh, 40vh, 50vh);
+    flex-grow: 1;
     object-fit: cover;
     border: solid white 5px;
 }
