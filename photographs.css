@@ -2,8 +2,17 @@
     overflow-y: auto;
 }
 
-.main-box{
-    align-content: center;
+.main-box {
+    height: fit-content;
+}
+
+.title-card {
+    position: sticky;
+    top: 0;
+    display: flex;
+    width: 100vw;
+    background-color: var(--primary);
+    justify-content: center;
 }
 
 .photoboard {

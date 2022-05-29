@@ -51,6 +51,12 @@ p, a, a:visited {
 .main-box{
     display: flex;
     flex-direction: column;
+    align-content: center;
+}
+
+.navigation-box{
+    display: flex;
+    justify-content: center;
 }
 
 .title-card a{
@@ -65,8 +71,14 @@ p, a, a:visited {
 .title-card{
     transition: ease-out var(--transition-time);
     align-self: center;
+    position: sticky;
+    top: 0;
+    display: flex;
+    width: 100vw;
+    background-color: var(--primary);
+    justify-content: center;
 }
 
-.title-card:hover{
+.title-card a:hover{
     scale: 1.2;
 }
