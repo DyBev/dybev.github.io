@@ -106,6 +106,8 @@ function resetGame() {
         if (i == snakePositions[snakePositions.length - 1]) { snakePart.style.left = 0; }
         if (i == snakePositions[0]) { snakePart.style.right = 0; }
     }
+
+    noteElement.innerHTML = `Press space to reset the game`
 }
 
 function startGame() {
