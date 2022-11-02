@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap');
+
+:root{
+    --eerie-black: #262626ff;
+    --davys-grey: #474747ff;
+    --granite-gray: #666666ff;
+    --battleship-grey: #858585ff;
+    --quick-silver: #a3a3a3ff;
+    --silver: #bfbfbfff;
+}
+
+body{
+    height: 100vh; width: 100vw;
+    background-color: var(--silver);
+    margin: 0; padding: 0;
+    display: felx; justify-content: center; align-items: center;
+}
+
+.wrapper-flex{
+    max-height: 1024px; max-width: 1440px;
+    height: 100%; width: 100%;
+    display: flex; flex-direction: row;
+    align-items: center; justify-content: space-around;
+    position: absolute;
+}
+
+.accessability-icon{
+    height: 40px; width: 40px;
+    border-radius: 50%;
+    background-color: var(--eerie-black);
+    position: absolute;
+    top: 15px; left: 15px;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.accessability-icon svg {
+    width: 30px; height: 30px;
+    fill: var(--silver)
+}
+
+.main-title{
+    margin-left: 80px; margin-right: auto;
+}
+
+.main-title h1:hover{
+    text-shadow: 10px 10px 3px var(--battleship-grey);
+    transform: translate(-10px, -10px);
+    transition: 100ms ease-in-out;
+}
+
+.main-title h1{
+    color: var(--eerie-black);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 130px;
+    margin: 0;
+    height: 338px; width: 390px;
+    position: relative;
+    transition: 1000ms ease-in-out;
+}
+
+.navigation-menu{
+    margin-right: 80px; margin-left: auto;
+}
+
+.navigation-menu p{
+    height: 48px; width: 380px;
+    color: var(--eerie-black);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: right;
+    position: relative;
+    transition: 1000ms ease-in-out;
+}
+
+.navigation-menu a p:hover{
+    text-shadow: 5px 5px 3px var(--battleship-grey);
+    transform: translate(-5px, -5px);
+    transition: 100ms ease-in-out;
+}
+
+a{
+    text-decoration: none;
+}
