@@ -9,11 +9,16 @@
     --silver: #bfbfbfff;
 }
 
-body{
+.main-body {
     height: 100vh; width: 100vw;
     background-color: var(--silver);
     margin: 0; padding: 0;
-    display: felx; justify-content: center; align-items: center;
+    display: flex; justify-content: center; align-items: center;
+    transition: 200ms ease-in-out;
+}
+
+.main-body.dark {
+    background-color: var(--eerie-black);
 }
 
 .wrapper-flex{
@@ -31,11 +36,50 @@ body{
     position: absolute;
     top: 15px; left: 15px;
     display: flex; justify-content: center; align-items: center;
+    transition: 300ms ease-in-out;
+}
+
+.accessability-icon.dark {
+    background-color: var(--silver);
 }
 
 .accessability-icon svg {
     width: 30px; height: 30px;
-    fill: var(--silver)
+    fill: var(--silver);
+    transition: 300ms ease-in-out;
+}
+
+.accessability-icon.dark svg {
+    fill: var(--eerie-black)
+}
+
+.slider-track {
+    width: 64px; height: 32px;
+    border-radius: 16px;
+    border: none;
+    padding: 0px;
+    background-color: var(--eerie-black);
+    box-shadow: 0px 2px 0px inset var(--davys-grey);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: 200ms ease-in-out;
+}
+
+.slider-track.dark {
+    background-color: var(--silver);
+}
+
+.slider-button {
+    height: 32px; width: 32px;
+    border-radius: 50%;
+    background-color: var(--battleship-grey);
+    position: relative;
+    transition: 200ms ease-in-out;
+}
+
+.slider-button.dark {
+    margin-left: 32px;
 }
 
 .main-title{
@@ -55,7 +99,23 @@ body{
     margin: 0;
     height: 338px; width: 390px;
     position: relative;
-    transition: 1000ms ease-in-out;
+    transition: transform 1500ms ease-in-out, text-shadow 1500ms ease-in-out, color 300ms ease-in-out;
+}
+
+.main-title.dark h1{
+    color: var(--silver);
+}
+
+
+.main-title h3 {
+    color: var(--eerie-black);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    transition: 300ms ease-in-out;
+}
+
+.main-title.dark h3{
+    color: var(--silver);
 }
 
 .navigation-menu{
@@ -71,7 +131,11 @@ body{
     line-height: 48px;
     text-align: right;
     position: relative;
-    transition: 1000ms ease-in-out;
+    transition: transform 1500ms ease-in-out, text-shadow 1500ms ease-in-out, color 300ms ease-in-out;
+}
+
+.navigation-menu.dark p{
+    color: var(--silver);
 }
 
 .navigation-menu a p:hover{
