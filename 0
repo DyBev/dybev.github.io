@@ -1,0 +1,11 @@
+import { hasPointerEvents } from "@testing-library/user-event/dist/utils/index.js";
+import { collection } from "firebase/firestore";
+import { db } from "./database.js";
+
+const personalProjectData = collection(db, "/PersonalProjects");
+const docSnap = getDoc(personalProjectData);
+
+export function PersonalProjects() {
+console.log(docSnap);
+	return (<div>Hello World</div>)
+}
