@@ -99,6 +99,16 @@ nav {
 	}
 }
 
+section {
+	height: calc(100vh - 62px);
+	width: calc(100vw - 16px);
+	scroll-snap-align: end;
+	&.welcome {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
 a {
   font-weight: 500;
   color: #646cff;
