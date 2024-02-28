@@ -1,6 +1,7 @@
-import { ChevronDown } from "@carbon/icons-react"
-import './gradient.js'
-import './firebase.tsx'
+import { ChevronDown } from "@carbon/icons-react";
+import { Tile } from './Card.tsx';
+import './gradient.js';
+import './firebase.tsx';
 
 function App() {
 	return (
@@ -30,6 +31,9 @@ function App() {
 			</section>
 			<p className="footer">See more</p>
 			<ChevronDown className="footer" size={32}/>
+		</section>
+		<section className="experience">
+		<Tile img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} title={'Mind Ease'} job={'Developer'} start={'Sep 2022'} current={true}/>
 		</section>
 		</>
 	)
