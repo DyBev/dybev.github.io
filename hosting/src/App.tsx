@@ -12,7 +12,7 @@ function App() {
 			</nav>
 		</header>
 		<section className="welcome">
-			<span className="big-text">Welcome</span>
+			<p className="bigText">Welcome</p>
 			<p>I am a software developer currently working in web environments</p>
 			<p>Looking for my next problem to solve</p>
 			<section className="languageIcons">
