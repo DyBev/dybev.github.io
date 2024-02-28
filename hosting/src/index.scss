@@ -13,6 +13,45 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  //text colors
+  --text-primary: rgb(244, 244, 244);
+  --text-secondary: rgb(198, 198, 198);
+  --text-placeholder: rgb(111, 111, 111);
+  --text-onColor: rgb(255, 255, 255);
+  --text-onColorDisabled: rgba(244, 244, 244, 0.25);
+  --text-helper: rgb(141, 141, 141);
+  --text-error: rgb(255, 131, 137);
+  --text-inverse: rgb(22, 22, 22);
+  --text-disabled: rgba(244, 244, 244, 0.25);
+
+  //background colors
+  --background: rgb(22, 22, 22);
+  --background-active: rgb(141, 141, 141);
+  --background-hover: rgba(141, 141, 141, 0.5);
+  --background-selected: rgba(141, 141, 141, 0.24);
+  --background-selected-hover: rgba(141, 141, 141, 0.32);
+  --background-brand: rgb(15, 98, 254);
+  --background-inverse: rgb(244, 244, 244);
+  --background-inverse-hover: rgb(229, 229, 229);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#root {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  width: 100vw;
+  height: calc(100vh - 48px);
+  overflow-y: scroll;
+  scroll-margin: 16px;
+  scrollbar-width: 16px;
+  position: relative;
+  top: 24px;
+  padding-top: 16px;
+  scroll-snap-type: y mandatory;
 }
 a {
   font-weight: 500;
