@@ -1,8 +1,8 @@
 import { ChevronDown } from "@carbon/icons-react"
 
 function App() {
-  return (
-    <>
+	return (
+		<>
 		<header className='global'>
 			<h1>Dylan</h1>
 			<nav>
@@ -18,8 +18,8 @@ function App() {
 			<p className="footer">See more</p>
 			<ChevronDown className="footer" size={32}/>
 		</section>
-    </>
-  )
+		</>
+	)
 }
 
 export default App
