@@ -107,6 +107,20 @@ section {
 		display: flex;
 		flex-direction: column;
 	}
+
+p {
+	margin-top: 0px;
+	margin-bottom: 16px;
+	font-size: 14px;
+	&.bigText {
+		font-size: 92px;
+		background-clip: text;
+		color: transparent;
+	}
+
+	&.footer {
+		bottom: 32px;
+	}
 }
 
 a {
