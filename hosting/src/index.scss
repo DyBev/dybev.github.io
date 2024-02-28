@@ -103,10 +103,34 @@ section {
 	height: calc(100vh - 62px);
 	width: calc(100vw - 16px);
 	scroll-snap-align: end;
+
 	&.welcome {
 		display: flex;
 		flex-direction: column;
 	}
+
+	&.languageIcons {
+		height: fit-content;
+		margin-top: auto;
+		margin-bottom: auto;
+		display: flex;
+		justify-content: center;
+		gap: 16px;
+
+		& img {
+			height: 76px;
+			width: 76px;
+		}
+	}
+
+	& .footer {
+		position: absolute;
+		bottom: 16px;
+		right: 50%;
+		transform: translate(50%,0%);
+
+	}
+}
 
 p {
 	margin-top: 0px;
