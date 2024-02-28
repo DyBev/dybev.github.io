@@ -71,6 +71,34 @@ header {
 		}
 	}
 }
+
+h1 {
+	padding: 0px 32px 0px 16px;
+	font-size: 32px;
+	color: var(--text-primary);
+	margin: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav {
+	display: flex;
+	& a {
+		color: var(--text-primary);
+		height: 100%;
+		padding: 0px 16px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			color: var(--text-primary);
+			background-color: var(--background-hover);
+		}
+	}
+}
+
 a {
   font-weight: 500;
   color: #646cff;
