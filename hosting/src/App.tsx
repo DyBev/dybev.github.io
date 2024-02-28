@@ -1,4 +1,5 @@
 import { ChevronDown } from "@carbon/icons-react"
+import './gradient.js'
 
 function App() {
 	return (
