@@ -1,5 +1,6 @@
 import { ChevronDown } from "@carbon/icons-react"
 import './gradient.js'
+import './firebase.tsx'
 
 function App() {
 	return (
