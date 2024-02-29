@@ -47,6 +47,28 @@
 	scroll-behavior: smooth;
 }
 
+@media only screen and (max-width: 444px) {
+	section {
+		&.welcome, &.experience {
+			height: calc(100vh - 42px) !important;
+		}
+	}
+
+	p {
+		&.bigText {
+			font-size: 76px !important;
+		}
+	}
+}
+@media only screen and (max-width: 475px) {
+	section {
+		&.languageIcons {
+			margin: 0px !important;
+			margin-top: 16px !important;
+		}
+	}
+}
+
 #root {
   margin: 0px;
   padding: 0px;
@@ -56,6 +78,7 @@
   overflow-y: scroll;
   scroll-margin: 16px;
   scrollbar-width: 16px;
+  scrollbar-gutter: 0px;
   position: relative;
   top: 24px;
   padding-top: 16px;
@@ -124,8 +147,9 @@ nav {
 
 section {
 	height: calc(100vh - 62px);
-	width: calc(100vw - 16px);
+	width: 100vw;
 	scroll-snap-align: end;
+	padding-inline: 16px;
 
 	&.welcome {
 		display: flex;
@@ -141,10 +165,13 @@ section {
 	}
 
 	&.languageIcons {
+		padding-inline: 0px;
+		width: 100%;
 		height: fit-content;
-		margin-top: auto;
+		margin-top: 64px;
 		margin-bottom: auto;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: center;
 		gap: 16px;
 
