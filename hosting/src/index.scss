@@ -44,6 +44,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0px;
+	scroll-behavior: smooth;
 }
 
 #root {
@@ -75,6 +76,7 @@ header {
 
 		& h1 {
 			font-weight: 600;
+			height: 100%;
 		}
 	}
 }
@@ -87,6 +89,20 @@ h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+a {
+	color: var(--text-primary);
+	height: 100%;
+	padding: 0px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		color: var(--text-primary);
+		background-color: var(--background-hover);
+	}
 }
 
 nav {

@@ -15,14 +15,15 @@ function App() {
 	return (
 		<>
 		<header className='global'>
-			<h1>Dylan</h1>
+			<a href="#welcome"><h1>Dylan</h1></a>
 			<nav>
 				<a>Experience</a>
 				<a>Projects</a>
 				<a>Contact</a>
+				<a href="#experience">Experience</a>
 			</nav>
 		</header>
-		<section className="welcome">
+		<section className="welcome" id='welcome'>
 			<p className="bigText">Welcome</p>
 			<p>I am a software developer currently working in web environments</p>
 			<p>Looking for my next problem to solve</p>
@@ -40,7 +41,7 @@ function App() {
 			<p className="footer">See more</p>
 			<ChevronDown className="footer" size={32}/>
 		</section>
-		<section className="experience">
+		<section className="experience" id="experience">
 			{ experienceData && <Tile img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} title={'Mind Ease'} job={'Developer'} start={'Sep 2022'} current={true}/> }
 			{ !experienceData && <TileSkelenton /> }
 		</section>
