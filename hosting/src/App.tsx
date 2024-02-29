@@ -2,10 +2,11 @@ import { ChevronDown } from "@carbon/icons-react";
 import { Tile, TileSkelenton } from './Tile.tsx';
 import './gradient.js';
 import { experience } from './firebase.tsx';
-import { useState } from "react";
+import { ReactNode, useState } from "react";
+import { DocumentData, QuerySnapshot } from "firebase/firestore";
 
-function App() {
-	const [experienceData, setExperienceData] = useState();
+function App(): ReactNode {
+	const [experienceData, setExperienceData] = useState<QuerySnapshot<DocumentData, DocumentData>>();
 
 	experience.then((doc) => {
 		console.log(doc);
