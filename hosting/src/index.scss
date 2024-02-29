@@ -45,11 +45,13 @@
 	box-sizing: border-box;
 	margin: 0px;
 	scroll-behavior: smooth;
+	scrollbar-width: none;
 }
 
 @media only screen and (max-width: 444px) {
 	#root {
 		scroll-snap-type: none !important;
+		scrollbar-width: unset !important;
 	}
 
 	section {
@@ -99,8 +101,6 @@
   height: calc(100vh - 48px);
   overflow-y: scroll;
   scroll-margin: 16px;
-  scrollbar-width: 16px;
-  scrollbar-gutter: 0px;
   position: relative;
   top: 24px;
   padding-top: 16px;
