@@ -48,9 +48,32 @@
 }
 
 @media only screen and (max-width: 444px) {
+	#root {
+		scroll-snap-type: none !important;
+	}
+
 	section {
 		&.welcome, &.experience {
-			height: calc(100vh - 42px) !important;
+			height: fit-content !important;
+		}
+
+		& p {
+			&.footer {
+				right: 0px !important;
+				transform: unset !important;
+			}
+		}
+
+		& svg {
+			&.footer {
+				right: -50% !important;
+				transform: translate(-50%, 0%);
+			}
+		}
+
+		& .footer {
+			position: relative !important;
+			bottom: 0px !important;
 		}
 	}
 
@@ -63,8 +86,7 @@
 @media only screen and (max-width: 475px) {
 	section {
 		&.languageIcons {
-			margin: 0px !important;
-			margin-top: 16px !important;
+			margin: 16px 0px !important;
 		}
 	}
 }
@@ -191,7 +213,7 @@ section {
 }
 
 div {
-	&.card {
+	&.tile {
 		background-color: var(--layer-03);
 		padding: 16px;
 		min-width: 128px;
@@ -232,9 +254,7 @@ div {
 		}
 
 		& .arrow {
-			position: absolute;
-			bottom: 16px;
-			right: 16px;
+			margin-left: auto;
 		}
 
 		&:hover {
