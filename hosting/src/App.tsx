@@ -42,14 +42,11 @@ function App() {
 			<ChevronDown className="footer" size={32}/>
 		</section>
 		<section className="experience" id="experience">
-			{ experienceData && <Tile img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} title={'Mind Ease'} job={'Developer'} start={'Sep 2022'} current={true}/> }
-			{ !experienceData && <TileSkelenton /> }
-		</section>
-		<section className="Projects">
-		test text
-		</section>
-		<section className="Contact">
-		test text
+			<div className="tileContainer">
+				<Tile title={'The Future'} job={'unknown'} start={'unknown'} current={false}/>
+				{ experienceData && <Tile img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} title={'Mind Ease'} job={'Developer'} start={'Sep 2022'} current={true}/> }
+				{ !experienceData && <TileSkelenton /> }
+			</div>
 		</section>
 		</>
 	)
