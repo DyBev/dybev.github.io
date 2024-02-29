@@ -13,9 +13,8 @@ function randomGradient() {
 		gradient_direction = -0.5;
 	}
 	color += gradient_direction;
-
-	gradientDeg += 0.6;
-	welcomeText.style.backgroundImage = `linear-gradient(45deg, var(--text-primary) ${start_transparent}%, var(--background-brand) ${color}%, var(--text-primary) ${end_transparent}%`;
+	gradientDeg += Math.random();
+	welcomeText.style.backgroundImage = `linear-gradient(${gradientDeg}deg, var(--text-primary) ${start_transparent}%, var(--background-brand) ${color}%, var(--text-primary) ${end_transparent}%`;
 }
 
 const gradientInterval = setInterval(() => randomGradient(), 1000/60);
