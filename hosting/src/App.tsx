@@ -1,9 +1,17 @@
 import { ChevronDown } from "@carbon/icons-react";
-import { Tile } from './Card.tsx';
+import { Tile, TileSkelenton } from './Card.tsx';
 import './gradient.js';
-import './firebase.tsx';
+import { experience } from './firebase.tsx';
+import { useState } from "react";
 
 function App() {
+	const [experienceData, setExperienceData] = useState();
+
+	experience.then((doc) => {
+		console.log(doc);
+		setExperienceData(doc);
+	});
+
 	return (
 		<>
 		<header className='global'>
@@ -33,7 +41,14 @@ function App() {
 			<ChevronDown className="footer" size={32}/>
 		</section>
 		<section className="experience">
-		<Tile img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} title={'Mind Ease'} job={'Developer'} start={'Sep 2022'} current={true}/>
+			{ experienceData && <Tile img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} title={'Mind Ease'} job={'Developer'} start={'Sep 2022'} current={true}/> }
+			{ !experienceData && <TileSkelenton /> }
+		</section>
+		<section className="Projects">
+		test text
+		</section>
+		<section className="Contact">
+		test text
 		</section>
 		</>
 	)

@@ -15,3 +15,17 @@ export function Tile({children, img, title, job, start, end, current}) {
 		</div>
 	)
 }
+
+export function TileSkelenton() {
+	return(
+		<div className="card skelenton">
+			<div className="img" />
+			<p className="subtitle"></p>
+			<h3 className="title"></h3>
+			<div className="dates">
+				<p className="body"></p>
+				<p className="body"></p>
+			</div>
+		</div>
+	)
+}

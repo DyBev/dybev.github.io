@@ -37,6 +37,8 @@
   //layer colors
   --layer-01: rgb(38, 38, 38);
   --layer-03: rgb(82, 82, 82);
+  --layer-active-02: rgb(111, 111, 111);
+  --layer-active-03: rgb(141, 141, 141);
 }
 
 * {
@@ -195,6 +197,126 @@ div {
 		&:hover {
 			background-color: var(--background-hover);
 		}
+
+		&.skelenton {
+			& .img {
+				width: 216px;
+				height: 216px;
+				margin-inline: auto;
+				background-color: var(--layer-active-02);
+				position: relative;
+				overflow: hidden;
+
+				&::after {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					transform: translateX(-100%);
+					background-image: linear-gradient(
+					90deg,
+					var(--text-disabled) 0,
+					var(--text-onColorDisabled) 20%,
+					var(--text-onColorDisabled) 60%,
+					var(--text-disabled)
+					);
+					animation: shimmer 2s infinite;
+					content: '';
+				}
+			}
+
+			& .subtitle {
+				padding: 0px;
+				background-color: var(--layer-active-02);
+				width: 40%;
+				position: relative;
+				overflow: hidden;
+
+				&::after {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					transform: translateX(-100%);
+					background-image: linear-gradient(
+					90deg,
+					var(--text-disabled) 0,
+					var(--text-onColorDisabled) 20%,
+					var(--text-onColorDisabled) 60%,
+					var(--text-disabled)
+					);
+					animation: shimmer 2s infinite;
+					content: '';
+				}
+			}
+
+			& .title {
+				padding: 0px;
+				background-color: var(--layer-active-02);
+				width: 50%;
+				position: relative;
+				overflow: hidden;
+
+				&::after {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					transform: translateX(-100%);
+					background-image: linear-gradient(
+					90deg,
+					var(--text-disabled) 0,
+					var(--text-onColorDisabled) 20%,
+					var(--text-onColorDisabled) 60%,
+					var(--text-disabled)
+					);
+					animation: shimmer 2s infinite;
+					content: '';
+				}
+			}
+
+			& .dates {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				margin-bottom: 32px;
+
+				& p {
+					width: 30%;
+					background-color: var(--layer-active-02);
+					position: relative;
+					overflow: hidden;
+
+					&::after {
+						position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						transform: translateX(-100%);
+						background-image: linear-gradient(
+						90deg,
+						var(--text-disabled) 0,
+						var(--text-onColorDisabled) 20%,
+						var(--text-onColorDisabled) 60%,
+						var(--text-disabled)
+						);
+						animation: shimmer 2s infinite;
+						content: '';
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes shimmer {
+	100% {
+		transform: translateX(100%);
 	}
 }
 
