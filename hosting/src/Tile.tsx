@@ -1,9 +1,21 @@
 import { ArrowRight } from "@carbon/icons-react";
+import { ReactNode } from "react";
 
-export function Tile({children, img, title, job, start, end, current}) {
+type Props = {
+	children?: ReactNode,
+	img?: string,
+	title: string,
+	job: string,
+	start: string,
+	end?: string,
+	current?: boolean
+}
+
+
+export function Tile({children, img, title, job, start, end, current}: Props) {
 	return(
 		<div className="tile">
-			<img src={img}/>
+			{img != undefined ? <img src={img}/> : <div className='img'/>}
 			<p className="subtitle">{job}</p>
 			<h3 className="title">{title}</h3>
 			<div className="dates">
@@ -11,7 +23,9 @@ export function Tile({children, img, title, job, start, end, current}) {
 				{ !current && <p className="body">{end}</p> }
 				<p className="body">{start}</p>
 			</div>
-			<ArrowRight size={20} className="arrow"/> 
+			{children && children}
+			{//<ArrowRight size={20} className="arrow"/> 
+			}
 		</div>
 	)
 }
