@@ -2,7 +2,7 @@ import { ArrowRight } from "@carbon/icons-react";
 
 export function Tile({children, img, title, job, start, end, current}) {
 	return(
-		<div className="card">
+		<div className="tile">
 			<img src={img}/>
 			<p className="subtitle">{job}</p>
 			<h3 className="title">{title}</h3>
@@ -11,14 +11,14 @@ export function Tile({children, img, title, job, start, end, current}) {
 				{ !current && <p className="body">{end}</p> }
 				<p className="body">{start}</p>
 			</div>
-			<ArrowRight size={20} className="arrow"/>
+			<ArrowRight size={20} className="arrow"/> 
 		</div>
 	)
 }
 
 export function TileSkelenton() {
 	return(
-		<div className="card skelenton">
+		<div className="tile skelenton">
 			<div className="img" />
 			<p className="subtitle"></p>
 			<h3 className="title"></h3>

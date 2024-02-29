@@ -1,5 +1,5 @@
 import { ChevronDown } from "@carbon/icons-react";
-import { Tile, TileSkelenton } from './Card.tsx';
+import { Tile, TileSkelenton } from './Tile.tsx';
 import './gradient.js';
 import { experience } from './firebase.tsx';
 import { useState } from "react";
