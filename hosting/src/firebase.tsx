@@ -16,19 +16,7 @@ const db = getFirestore(app);
 
 const personalProjectData = collection(db, "/PersonalProjects");
 const experienceData = collection(db, "/WorkHistory");
-var personalProjects;
-var experience;
 
-function getData() {
-	experience = getDocs(experienceData)
-		.then((doc) => {
-			doc.forEach((doc) => {console.log(doc.data())});
-		});
-	personalProjects = getDocs(personalProjectData)
-		.then((doc) => {
-			doc.forEach((doc) => {console.log(doc.data())});
-		});
-	console.log('data');
-}
+export const experience = getDocs(experienceData)
 
-getData();
+export const personalProjects = getDocs(personalProjectData)
