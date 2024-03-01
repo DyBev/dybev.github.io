@@ -166,6 +166,20 @@ nav {
 		}
 	}
 }
+a {
+	color: var(--text-primary);
+	height: 100%;
+	padding: 0px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+
+	&:hover {
+		color: var(--text-primary);
+		background-color: var(--background-hover);
+	}
+}
 
 section {
 	height: calc(100vh - 62px);
@@ -213,24 +227,93 @@ section {
 	}
 }
 
-div {
-	&.tileContainer {
-		display: flex;
-		gap: 16px;
+.tileContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row-reverse;
+	gap: 16px;
+}
+
+.tile {
+	background-color: var(--layer-03);
+	padding: 16px;
+	min-width: 128px;
+	width: fit-content;
+	min-height: 64px;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 16px;
+	position: relative;
+
+	& .img {
+		width: 216px;
+		height: 216px;
+		margin-inline: auto;
+		background-color: var(--layer-active-02);
+		position: relative;
+		overflow: hidden;
+
+		&::after {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			transform: translateX(-200%);
+			background-image: linear-gradient(
+			90deg,
+			var(--layer-active-02) 0%,
+			var(--text-onColorDisabled) 50%,
+			var(--layer-active-02) 100%,
+			);
+			animation: shimmer 50s infinite;
+			content: '';
+		}
 	}
 
-	&.tile {
-		background-color: var(--layer-03);
-		padding: 16px;
-		min-width: 128px;
-		width: fit-content;
-		min-height: 64px;
-		height: fit-content;
+	& img {
+		width: 216px;
+		margin-inline: auto;
+	}
+
+	& .subtitle {
+		height: 24px;
+		padding: 0px;
+	}
+
+	& .title {
+		height: 28px;
+		padding: 0px;
+	}
+
+	& .dates {
+		width: 100%;
 		display: flex;
-		flex-direction: column;
-		align-items: start;
-		gap: 16px;
-		position: relative;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 32px;
+
+		& p {
+			height: 24px;
+		}
+	}
+
+	& .arrow {
+		margin-left: auto;
+		height: 20px;
+		width: 20px;
+	}
+
+	&:hover {
+		background-color: var(--background-hover);
+	}
+
+	&.skelenton {
+
+		&:hover {
+			background-color: var(--layer-03);
+		}
 
 		& .img {
 			width: 216px;
@@ -242,33 +325,73 @@ div {
 
 			&::after {
 				position: absolute;
-				height: 100%;
-				width: 100%;
-				transform: translateX(-200%);
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				transform: translateX(-100%);
 				background-image: linear-gradient(
 				90deg,
-				var(--layer-active-02) 0%,
-				var(--text-onColorDisabled) 50%,
-				var(--layer-active-02) 100%,
+				var(--text-disabled) 0,
+				var(--text-onColorDisabled) 20%,
+				var(--text-onColorDisabled) 60%,
+				var(--text-disabled)
 				);
-				animation: shimmer 50s infinite;
+				animation: shimmer 2s infinite;
 				content: '';
 			}
 		}
 
-		& img {
-			width: 216px;
-			margin-inline: auto;
-		}
-
 		& .subtitle {
-			height: 24px;
 			padding: 0px;
+			background-color: var(--layer-active-02);
+			width: 40%;
+			position: relative;
+			overflow: hidden;
+
+			&::after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				transform: translateX(-100%);
+				background-image: linear-gradient(
+				90deg,
+				var(--text-disabled) 0,
+				var(--text-onColorDisabled) 20%,
+				var(--text-onColorDisabled) 60%,
+				var(--text-disabled)
+				);
+				animation: shimmer 2s infinite;
+				content: '';
+			}
 		}
 
 		& .title {
-			height: 28px;
 			padding: 0px;
+			background-color: var(--layer-active-02);
+			width: 50%;
+			position: relative;
+			overflow: hidden;
+
+			&::after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				transform: translateX(-100%);
+				background-image: linear-gradient(
+				90deg,
+				var(--text-disabled) 0,
+				var(--text-onColorDisabled) 20%,
+				var(--text-onColorDisabled) 60%,
+				var(--text-disabled)
+				);
+				animation: shimmer 2s infinite;
+				content: '';
+			}
 		}
 
 		& .dates {
@@ -279,23 +402,7 @@ div {
 			margin-bottom: 32px;
 
 			& p {
-				height: 24px;
-			}
-		}
-
-		& .arrow {
-			margin-left: auto;
-		}
-
-		&:hover {
-			background-color: var(--background-hover);
-		}
-
-		&.skelenton {
-			& .img {
-				width: 216px;
-				height: 216px;
-				margin-inline: auto;
+				width: 30%;
 				background-color: var(--layer-active-02);
 				position: relative;
 				overflow: hidden;
@@ -316,91 +423,6 @@ div {
 					);
 					animation: shimmer 2s infinite;
 					content: '';
-				}
-			}
-
-			& .subtitle {
-				padding: 0px;
-				background-color: var(--layer-active-02);
-				width: 40%;
-				position: relative;
-				overflow: hidden;
-
-				&::after {
-					position: absolute;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					left: 0;
-					transform: translateX(-100%);
-					background-image: linear-gradient(
-					90deg,
-					var(--text-disabled) 0,
-					var(--text-onColorDisabled) 20%,
-					var(--text-onColorDisabled) 60%,
-					var(--text-disabled)
-					);
-					animation: shimmer 2s infinite;
-					content: '';
-				}
-			}
-
-			& .title {
-				padding: 0px;
-				background-color: var(--layer-active-02);
-				width: 50%;
-				position: relative;
-				overflow: hidden;
-
-				&::after {
-					position: absolute;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					left: 0;
-					transform: translateX(-100%);
-					background-image: linear-gradient(
-					90deg,
-					var(--text-disabled) 0,
-					var(--text-onColorDisabled) 20%,
-					var(--text-onColorDisabled) 60%,
-					var(--text-disabled)
-					);
-					animation: shimmer 2s infinite;
-					content: '';
-				}
-			}
-
-			& .dates {
-				width: 100%;
-				display: flex;
-				flex-direction: row;
-				justify-content: space-between;
-				margin-bottom: 32px;
-
-				& p {
-					width: 30%;
-					background-color: var(--layer-active-02);
-					position: relative;
-					overflow: hidden;
-
-					&::after {
-						position: absolute;
-						top: 0;
-						right: 0;
-						bottom: 0;
-						left: 0;
-						transform: translateX(-100%);
-						background-image: linear-gradient(
-						90deg,
-						var(--text-disabled) 0,
-						var(--text-onColorDisabled) 20%,
-						var(--text-onColorDisabled) 60%,
-						var(--text-disabled)
-						);
-						animation: shimmer 2s infinite;
-						content: '';
-					}
 				}
 			}
 		}
@@ -429,15 +451,6 @@ p {
 	&.footer {
 		bottom: 48px;
 	}
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
