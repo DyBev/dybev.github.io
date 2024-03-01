@@ -1,13 +1,12 @@
 import { ChevronDown } from "@carbon/icons-react";
 import { Tile, TileSkelenton } from './Tile.tsx';
-import './gradient.js';
-import { experience } from './firebase.tsx';
-import { ReactNode, useState } from "react";
-import { DocumentData, QuerySnapshot } from "firebase/firestore";
 import { randomGradient } from "./gradient.ts";
+import { ReactNode, useEffect } from "react";
+import { DocumentData } from "firebase/firestore";
+import { useData } from "./firebase.tsx";
 
 function App(): ReactNode {
-	const [experienceData, setExperienceData] = useState<QuerySnapshot<DocumentData, DocumentData>>();
+	const { experienceData } = useData();
 
 	useEffect(() => {
 		const gradientInterval = setInterval(() => randomGradient(), 1000/60);

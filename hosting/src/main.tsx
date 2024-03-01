@@ -5,6 +5,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 import App from './App.tsx'
 import Work from './Work.tsx'
+import { DataProvider } from './firebase.tsx'
 
 const router = createBrowserRouter([
 	{
@@ -29,6 +30,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+	<DataProvider>
 		<RouterProvider router={router}/>
+	</DataProvider>
   </React.StrictMode>,
 )
