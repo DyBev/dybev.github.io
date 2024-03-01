@@ -25,8 +25,7 @@ function App(): ReactNode {
 		}
 
 		const gradientInterval = setInterval(() => randomGradient(), 1000/60);
-
-		return clearInterval(gradientInterval);
+		return () => clearInterval(gradientInterval);
 	},[]);
 
 	return (
