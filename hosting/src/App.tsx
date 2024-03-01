@@ -45,8 +45,23 @@ function App(): ReactNode {
 		</section>
 		<section className="experience" id="experience">
 			<div className="tileContainer">
-				{ experienceData && <Tile img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} title={'Mind Ease'} job={'Developer'} start={'Sep 2022'} current={true}/> }
 				<Tile title={'The Future'} job={'unknown'} start={'unknown'} order={99}/>
+				{ experienceData && experienceData.map((doc: DocumentData) => {
+						return(
+							<Tile
+								key={`${doc.data().order}_${doc.data().company}`}
+								elementkey={`${doc.data().order}_${doc.data().company}`}
+								link={`/work/${doc.data().company}`}
+								img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} 
+								title={doc.data().companyName} 
+								job={doc.data().jobTitle} 
+								start={doc.data().start} 
+								end={doc.data().end}
+								order={doc.data().order}
+							/>
+						)
+					})
+				}
 				{ !experienceData && <TileSkelenton /> }
 			</div>
 		</section>
