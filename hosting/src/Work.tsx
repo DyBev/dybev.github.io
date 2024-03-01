@@ -22,7 +22,7 @@ function Work(): ReactNode {
 		<header className='global'>
 			<Link to="/"><h1>Dylan</h1></Link>
 			<nav>
-				<Link to="/#experience">Experience</Link>
+				<Link to="/experience">Experience</Link>
 			</nav>
 		</header>
 		<section className='workPage'>

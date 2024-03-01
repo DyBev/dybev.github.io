@@ -4,11 +4,25 @@ import { randomGradient } from "./gradient.ts";
 import { ReactNode, useEffect } from "react";
 import { DocumentData } from "firebase/firestore";
 import { useData } from "./firebase.tsx";
+import { Link, useParams } from "react-router-dom";
 
 function App(): ReactNode {
 	const { experienceData } = useData();
+	const { "*": splat } = useParams();
+
+	const navigateTo = (target: string, behavior: ScrollBehavior = "smooth") => {
+		document.getElementById(target)?.scrollIntoView(
+			{behavior: behavior, block: "end", inline: "nearest"}
+		);
+	}
+
+
 
 	useEffect(() => {
+		if (splat != '' && splat != undefined) {
+			navigateTo(splat, "instant");
+		}
+
 		const gradientInterval = setInterval(() => randomGradient(), 1000/60);
 
 		return clearInterval(gradientInterval);
@@ -17,12 +31,13 @@ function App(): ReactNode {
 	return (
 		<>
 		<header className='global'>
-			<a href="#welcome"><h1>Dylan</h1></a>
+			<Link to="welcome" onClick={() => navigateTo("welcome")}><h1>Dylan</h1></Link>
 			<nav>
 				<a>Experience</a>
 				<a>Projects</a>
 				<a>Contact</a>
 				<a href="#experience">Experience</a>
+				<Link to="experience" onClick={() => navigateTo("experience")}>Experience</Link>
 			</nav>
 		</header>
 		<section className="welcome" id='welcome'>
