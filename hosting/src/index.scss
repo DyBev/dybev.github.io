@@ -85,6 +85,7 @@
 		}
 	}
 }
+
 @media only screen and (max-width: 475px) {
 	section {
 		&.languageIcons {
@@ -102,8 +103,7 @@
   overflow-y: scroll;
   scroll-margin: 16px;
   position: relative;
-  top: 24px;
-  padding-top: 16px;
+  top: 48px;
   scroll-snap-type: y mandatory;
 }
 
@@ -182,17 +182,20 @@ a {
 }
 
 section {
-	height: calc(100vh - 62px);
+	max-height: calc(100vh - 48px);
+	max-width: 1440px;
 	width: 100vw;
 	scroll-snap-align: end;
-	padding-inline: 16px;
+	padding: 16px;
 
 	&.welcome {
+		height: calc(100vh - 48px);
 		display: flex;
 		flex-direction: column;
 	}
 
 	&.experience {
+		height: calc(100vh - 48px);
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
@@ -411,15 +414,8 @@ p {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 2rem;
-  line-height: 1.1;
 }
 
 button {
