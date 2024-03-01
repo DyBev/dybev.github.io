@@ -4,14 +4,16 @@ import './gradient.js';
 import { experience } from './firebase.tsx';
 import { ReactNode, useState } from "react";
 import { DocumentData, QuerySnapshot } from "firebase/firestore";
+import { randomGradient } from "./gradient.ts";
 
 function App(): ReactNode {
 	const [experienceData, setExperienceData] = useState<QuerySnapshot<DocumentData, DocumentData>>();
 
-	experience.then((doc) => {
-		console.log(doc);
-		setExperienceData(doc);
-	});
+	useEffect(() => {
+		const gradientInterval = setInterval(() => randomGradient(), 1000/60);
+
+		return clearInterval(gradientInterval);
+	},[]);
 
 	return (
 		<>
