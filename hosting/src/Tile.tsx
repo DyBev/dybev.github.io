@@ -1,5 +1,6 @@
 import { ArrowRight } from "@carbon/icons-react";
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 type Props = {
 	children?: ReactNode,
@@ -8,25 +9,26 @@ type Props = {
 	job: string,
 	start: string,
 	end?: string,
-	current?: boolean
+	link?: string,
+	order?: number
+	elementkey?: string
 }
 
 
-export function Tile({children, img, title, job, start, end, current}: Props) {
+export function Tile({children, img, title, job, start, end, link, order, elementkey}: Props) {
 	return(
-		<div className="tile">
+		<Link className="tile" to={link} style={{order: order}} key={elementkey}>
 			{img != undefined ? <img src={img}/> : <div className='img'/>}
 			<p className="subtitle">{job}</p>
 			<h3 className="title">{title}</h3>
 			<div className="dates">
-				{ current && <p className="body">current</p> }
-				{ !current && <p className="body">{end}</p> }
+				<p className="body">{end}</p>
 				<p className="body">{start}</p>
 			</div>
 			{children && children}
-			{//<ArrowRight size={20} className="arrow"/> 
-			}
-		</div>
+			{link && <ArrowRight size={20} className="arrow"/> }
+			{!link && <div className="arrow" /> }
+		</Link>
 	)
 }
 
@@ -40,6 +42,7 @@ export function TileSkelenton() {
 				<p className="body"></p>
 				<p className="body"></p>
 			</div>
+			<div className="arrow" />
 		</div>
 	)
 }
