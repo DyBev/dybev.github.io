@@ -94,6 +94,21 @@
 	}
 }
 
+@media only screen and (max-width: 516px) {
+	section {
+		&.workHeader {
+			width: 100% !important;
+			height: fit-content !important;
+		}
+	}
+
+	img {
+		&.companyLogo {
+			border-bottom: none !important;
+		}
+	}
+}
+
 #root {
   margin: 0px;
   padding: 0px;
@@ -136,6 +151,14 @@ h1 {
 	align-items: center;
 }
 
+h2 {
+	font-weight: 400;
+
+	&.sectionHeader {
+		text-align: left;
+	}
+}
+
 a {
 	color: var(--text-primary);
 	height: 100%;
@@ -160,12 +183,33 @@ nav {
 		justify-content: center;
 		align-items: center;
 
+		&:has(+ p.divider) {
+			padding-right: 8px;
+			justify-self: flex-start;
+		}
+
 		&:hover {
 			color: var(--text-primary);
 			background-color: var(--background-hover);
 		}
 	}
+
+	& p {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&.divider {
+			padding-inline: 0px;
+		}
+
+		&.companyName {
+			padding-inline: 8px;
+			padding-right: 16px;
+		}
+	}
 }
+
 a {
 	color: var(--text-primary);
 	height: 100%;
@@ -202,6 +246,53 @@ section {
 		padding: 16px;
 		gap: 16px;
 		overflow-x: scroll;
+	}
+
+	&.workPage {
+		display: flex;
+		flex-wrap: wrap;
+		
+		& .workHeader {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: start;
+			height: 216px;
+			padding: 16px;
+			border-bottom: 1px solid var(--text-primary);
+			width: fit-content;
+			flex-grow: 1;
+
+			& p {
+
+				&.jobRole {
+					font-size: 42px;
+				}
+
+				&.companyName {
+					font-size: 24px;
+					display: flex;
+					align-items: end;
+					gap: 8px;
+
+					& p {
+						line-height: 28.5px;
+					}
+				}
+			}
+		}
+	}
+
+	&.jobDescription {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&.jobAchievements {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
 	}
 
 	&.languageIcons {
@@ -409,6 +500,37 @@ p {
 
 	&.footer {
 		bottom: 48px;
+	}
+
+	&.jobDescription {
+		text-align: left;
+	}
+}
+
+img {
+	&.companyLogo {
+		height: 216px;
+		width: 216px;
+		padding: 16px;
+		border-bottom: 1px solid var(--text-primary);
+	}
+}
+
+div {
+	&.companyLogo {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+ul {
+	padding-inline: 0px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	& li {
+		text-align: left;
 	}
 }
 

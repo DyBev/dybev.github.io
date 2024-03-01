@@ -7,11 +7,11 @@ function Work(): ReactNode {
 	const { company } = useParams();
 	const { experienceData } = useData();
 	const [companyData, setCompanyData] = useState<DocumentData>()
-	const testString = '- hello\n- broken line\n- another one'
 
 	useEffect(() => {
 		experienceData?.map((doc) => {
 			if (company == doc.data().company) {
+				console.log(doc.data());
 				setCompanyData(doc.data());
 			}
 		});
@@ -22,12 +22,29 @@ function Work(): ReactNode {
 		<header className='global'>
 			<Link to="/"><h1>Dylan</h1></Link>
 			<nav>
-				<Link to="/experience">Experience</Link>
+				<Link to="/experience">Experience</Link><p className="divider">/</p><p className="companyName">{companyData?.companyName}</p>
 			</nav>
 		</header>
-		<section className='workPage'>
-			{companyData?.companyName}
-			<pre>{testString}</pre>
+		<section className={`workPage ${companyData ? "loaded" : "loading"}`}>
+			<div className="companyLogo">
+				<img src={`/${companyData?.company}.png`} className="companyLogo"/>
+			</div>
+			<section className="workHeader">
+				<p className="jobRole">{companyData?.jobTitle}</p>
+				<p className="companyName"><p>at</p>{companyData?.companyName}</p>
+			</section>
+			<section id="jobDescription" className="jobDescription">
+				<h2 className="sectionHeader">Job Description</h2>
+				<p className="jobDescription">{companyData?.jobDescription}</p>
+			</section>
+			<section id="jobAchievements" className="jobAchievements">
+				<h2 className="sectionHeader">Job Achievements</h2>
+				<ul className="jobAchievements">
+				{companyData?.jobAchievements?.map((achievement: string, index: number) => {
+					return <li key={`achievement_${index}`}>{achievement}</li>
+				})}
+				</ul>
+			</section>
 		</section>
 		</>
 	)
