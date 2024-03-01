@@ -68,7 +68,7 @@ function App(): ReactNode {
 								key={`${doc.data().order}_${doc.data().company}`}
 								elementkey={`${doc.data().order}_${doc.data().company}`}
 								link={`/work/${doc.data().company}`}
-								img={'https://mindease.io/wp-content/themes/mindease/images/logo.png'} 
+								img={`/${doc.data().company}.png`} 
 								title={doc.data().companyName} 
 								job={doc.data().jobTitle} 
 								start={doc.data().start} 
