@@ -18,5 +18,3 @@ export function randomGradient() {
 		welcomeText.style.backgroundImage = `linear-gradient(${gradientDeg}deg, var(--text-primary) ${start_transparent}%, var(--background-brand) ${color}%, var(--text-primary) ${end_transparent}%`;
 	}
 }
-
-const gradientInterval = setInterval(() => randomGradient(), 1000/60);
