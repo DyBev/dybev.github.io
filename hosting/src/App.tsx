@@ -4,16 +4,17 @@ import { randomGradient } from "./gradient.ts";
 import { ReactNode, useEffect } from "react";
 import { DocumentData } from "firebase/firestore";
 import { useData } from "./firebase.tsx";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 function App(): ReactNode {
 	const { experienceData } = useData();
 	const { "*": splat } = useParams();
+	const navigate = useNavigate();
 
 	const navigateTo = (target: string, behavior: ScrollBehavior = "smooth") => {
-		document.getElementById(target)?.scrollIntoView(
+		document.getElementById(target) ? document.getElementById(target)?.scrollIntoView(
 			{behavior: behavior, block: "end", inline: "nearest"}
-		);
+		) : navigate("/");
 	}
 
 
