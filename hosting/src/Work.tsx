@@ -11,7 +11,6 @@ function Work(): ReactNode {
 	useEffect(() => {
 		experienceData?.map((doc) => {
 			if (company == doc.data().company) {
-				console.log(doc.data());
 				setCompanyData(doc.data());
 			}
 		});
