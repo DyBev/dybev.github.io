@@ -6,12 +6,14 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import App from './App.tsx'
 import Work from './Work.tsx'
 import { DataProvider } from './firebase.tsx'
+import Footer from './Footer.tsx';
 
 const router = createBrowserRouter([
 	{
 		element: (
 			<>
 				<Outlet/>
+				<Footer/>
 			</>
 		),
 		children: [

@@ -314,6 +314,27 @@ section {
 		}
 	}
 
+	&.footerElement {
+		background-color: var(--background);
+
+		& .linkList {
+			display: flex;
+			flex-direction: column;
+			gap: 0px;
+			list-style-type: none !important;
+
+			& li {
+
+				& a {
+					width: fit-content;
+					padding: 4px 8px;
+					display: flex;
+					gap: 8px;
+				}
+			}
+		}
+	}
+
 	& .footer {
 		position: absolute;
 		bottom: 16px;
