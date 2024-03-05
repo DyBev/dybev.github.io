@@ -114,13 +114,16 @@
   padding: 0px;
   text-align: center;
   width: 100vw;
-  height: calc(100vh - 48px);
+  height: 100vh;
   overflow-y: scroll;
   scroll-margin: 16px;
   position: relative;
-  top: 48px;
   scroll-snap-type: y mandatory;
-  padding-inline: max(0px, calc((100vw - 1280px)/2));
+
+  & section {
+	  padding-inline: max(16px, calc((100vw - 1280px)/2));
+  }
+
 }
 
 header {
@@ -132,9 +135,10 @@ header {
 		flex-direction: row;
 		justify-content: space-between;
 		background-color: var(--background);
-		position: fixed;
+		position: sticky;
 		top: 0px;
 		left: 0px;
+		z-index: 99;
 
 		& h1 {
 			font-weight: 600;
