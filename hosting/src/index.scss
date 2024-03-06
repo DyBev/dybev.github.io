@@ -77,6 +77,10 @@
 			position: relative !important;
 			bottom: 0px !important;
 		}
+
+		&:has(+ section.footerElement) {
+			padding-bottom: 32px !important;
+		}
 	}
 
 	p {
@@ -255,10 +259,16 @@ section {
 	}
 
 	&.workPage {
+		max-height: unset;
 		display: flex;
 		flex-wrap: wrap;
+
+		& + section.footerElement {
+			scroll-snap-align: none;
+		}
 		
 		& .workHeader {
+			scroll-snap-align: none;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -290,12 +300,16 @@ section {
 	}
 
 	&.jobDescription {
+		max-height: unset;
+		scroll-snap-align: none;
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
 	}
 
 	&.jobAchievements {
+		max-height: unset;
+		scroll-snap-align: none;
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
@@ -321,6 +335,7 @@ section {
 	&:has(+ section.footerElement) {
 		height: fit-content;
 		scroll-snap-align: none;
+		padding-bottom: 80px;
 	}
 
 	&.footerElement {
