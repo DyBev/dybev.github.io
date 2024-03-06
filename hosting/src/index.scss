@@ -318,7 +318,13 @@ section {
 		}
 	}
 
+	&:has(+ section.footerElement) {
+		height: fit-content;
+		scroll-snap-align: none;
+	}
+
 	&.footerElement {
+		padding: 32px;
 		background-color: var(--background);
 
 		& .linkList {
