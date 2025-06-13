@@ -62,17 +62,22 @@ function App(): ReactNode {
 			<div className="tileContainer">
 				<Tile title={'The Future'} job={'unknown'} start={'unknown'} order={99}/>
 				{ experienceData && experienceData.map((doc: DocumentData) => {
+						const docData = doc.data();
+						let jobLink: string = `/work/${docData.company}`
+						if (!docData.jobDescription) {
+							jobLink = ""
+						}
 						return(
 							<Tile
-								key={`${doc.data().order}_${doc.data().company}`}
-								elementkey={`${doc.data().order}_${doc.data().company}`}
-								link={`/work/${doc.data().company}`}
-								img={`/${doc.data().company}.png`} 
-								title={doc.data().companyName} 
-								job={doc.data().jobTitle} 
-								start={doc.data().start} 
-								end={doc.data().end}
-								order={doc.data().order}
+								key={`${docData?.order}_${docData?.company}`}
+								elementkey={`${docData?.order}_${docData?.company}`}
+								link={jobLink}
+								img={docData?.image?.base64} 
+								title={docData?.companyName} 
+								job={docData?.jobTitle} 
+								start={docData?.start} 
+								end={docData?.end}
+								order={docData?.order}
 							/>
 						)
 					})

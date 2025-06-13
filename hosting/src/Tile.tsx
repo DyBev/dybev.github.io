@@ -16,9 +16,29 @@ type Props = {
 
 
 export function Tile({children, img, title, job, start, end, link, order, elementkey}: Props) {
+	console.log({
+		title, link, length: link?.length, boolean: link?.length == 0
+	})
+	if (!link || link?.length == 0) {
+		return (
+			<div className="tile" style={{order: order}} key={elementkey}>
+				{img != undefined ? <img src={`data:image/png;base64,${img}`}/> : <div className='img'/>}
+				<p className="subtitle">{job}</p>
+				<h3 className="title">{title}</h3>
+				<div className="dates">
+					<p className="body">{end}</p>
+					<p className="body">{start}</p>
+				</div>
+				{children && children}
+				{link && <ArrowRight size={20} className="arrow"/> }
+				{!link && <div className="arrow" /> }
+			</div>
+		)
+	}
+
 	return(
 		<Link className="tile" to={link} style={{order: order}} key={elementkey}>
-			{img != undefined ? <img src={img}/> : <div className='img'/>}
+			{img != undefined ? <img src={`data:image/png;base64,${img}`}/> : <div className='img'/>}
 			<p className="subtitle">{job}</p>
 			<h3 className="title">{title}</h3>
 			<div className="dates">
