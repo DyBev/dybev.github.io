@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, QueryDocumentSnapshot, DocumentData } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, QueryDocumentSnapshot, DocumentData, query, where } from 'firebase/firestore';
 import React, { ReactNode, useContext, useEffect, useState } from "react";
 
 type Context = {
@@ -32,8 +32,8 @@ export function DataProvider({ children }: {children: ReactNode}): JSX.Element {
 	const [projectData, setProjectData] = useState<QueryDocumentSnapshot<DocumentData, DocumentData>[]>();
 	const [loading, setLoading] = useState<boolean>(true);
 
-	const projectRef = collection(db, "/PersonalProjects");
-	const experienceRef = collection(db, "/WorkHistory");
+	const projectRef = query(collection(db, "/PersonalProjects"), where("active", "==", true));
+	const experienceRef = query(collection(db, "/WorkHistory"), where("active", "==", true));
 
 	useEffect(() => {
 		getDocs(experienceRef).then((doc) => setExperienceData(doc.docs));
