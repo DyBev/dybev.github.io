@@ -77,6 +77,12 @@
 			position: relative !important;
 			bottom: 0px !important;
 		}
+
+		&:has(+ section.footerElement) {
+			padding-bottom: 32px !important;
+            height: calc(100vh - 128px - 48px);
+            box-sizing: border-box;
+		}
 	}
 
 	p {
@@ -120,7 +126,7 @@
   position: relative;
   scroll-snap-type: y mandatory;
 
-  & section {
+  & > section {
 	  padding-inline: max(16px, calc((100vw - 1280px)/2));
   }
 
@@ -233,7 +239,6 @@ a {
 
 section {
 	max-height: calc(100vh - 48px);
-	max-width: 1440px;
 	width: 100%;
 	scroll-snap-align: end;
 	padding: 16px;
@@ -255,10 +260,16 @@ section {
 	}
 
 	&.workPage {
+		max-height: unset;
 		display: flex;
 		flex-wrap: wrap;
+
+		& + section.footerElement {
+			scroll-snap-align: none;
+		}
 		
 		& .workHeader {
+			scroll-snap-align: none;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -290,12 +301,16 @@ section {
 	}
 
 	&.jobDescription {
+		max-height: unset;
+		scroll-snap-align: none;
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
 	}
 
 	&.jobAchievements {
+		max-height: unset;
+		scroll-snap-align: none;
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
@@ -318,7 +333,14 @@ section {
 		}
 	}
 
+	&:has(+ section.footerElement) {
+		height: calc(100vh - 128px - 48px);
+		scroll-snap-align: none;
+		padding-bottom: 80px;
+	}
+
 	&.footerElement {
+		padding: 32px;
 		background-color: var(--background);
 
 		& .linkList {
@@ -362,7 +384,8 @@ section {
 	min-width: 128px;
 	width: fit-content;
 	min-height: 64px;
-	height: fit-content;
+    height: fit-content;
+	max-height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: start;
@@ -376,6 +399,7 @@ section {
 		background-color: var(--layer-active-02);
 		position: relative;
 		overflow: hidden;
+        aspect-ratio: 1 / 1;
 
 		&::after {
 			position: absolute;
@@ -396,6 +420,7 @@ section {
 	& img {
 		width: 216px;
 		margin-inline: auto;
+        aspect-ratio: 1 / 1;
 	}
 
 	& .subtitle {
