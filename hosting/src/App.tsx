@@ -34,10 +34,12 @@ function App(): ReactNode {
 			<Link to="welcome" onClick={() => navigateTo("welcome")}><h1>Dylan</h1></Link>
 			<nav>
 				<a>Experience</a>
+				{ /*
 				<a>Projects</a>
 				<a>Contact</a>
 				<a href="#experience">Experience</a>
 				<Link to="experience" onClick={() => navigateTo("experience")}>Experience</Link>
+				*/ }
 			</nav>
 		</header>
 		<section className="welcome" id='welcome'>
