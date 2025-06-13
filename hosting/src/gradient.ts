@@ -1,11 +1,15 @@
 let gradientDeg = 90;
-let start_transparent = 0;
-let end_transparent = 100;
+const start_transparent = 0;
+const end_transparent = 100;
 let color = 50;
 let gradient_direction = 0.5;
 
 export function randomGradient() {
-	let welcomeText = document.querySelector('section.welcome p.bigText');
+	const welcomeText: HTMLElement | null = document.querySelector('section.welcome p.bigText');
+
+	if (welcomeText == null) {
+		return;
+	}
 
 	if (color < 10) {
 		gradient_direction = 0.5;
