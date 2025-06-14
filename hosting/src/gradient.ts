@@ -5,22 +5,24 @@ let color = 50;
 let gradient_direction = 0.5;
 
 export function randomGradient() {
-	const welcomeText: HTMLElement | null = document.querySelector('section.welcome p.bigText');
+  const welcomeText: HTMLElement | null = document.querySelector(
+    'section.welcome p.bigText',
+  );
 
-	if (welcomeText == null) {
-		return;
-	}
+  if (welcomeText == null) {
+    return;
+  }
 
-	if (color < 10) {
-		gradient_direction = 0.5;
-	}
+  if (color < 10) {
+    gradient_direction = 0.5;
+  }
 
-	if (color > 90) {
-		gradient_direction = -0.5;
-	}
+  if (color > 90) {
+    gradient_direction = -0.5;
+  }
 
-	color += gradient_direction;
-	gradientDeg += Math.random();
+  color += gradient_direction;
+  gradientDeg += Math.random();
 
-	welcomeText.style.backgroundImage = `linear-gradient(${gradientDeg}deg, var(--text-primary) ${start_transparent}%, var(--background-brand) ${color}%, var(--text-primary) ${end_transparent}%`;
+  welcomeText.style.backgroundImage = `linear-gradient(${gradientDeg}deg, var(--text-primary) ${start_transparent}%, var(--background-brand) ${color}%, var(--text-primary) ${end_transparent}%`;
 }
