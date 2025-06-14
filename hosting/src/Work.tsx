@@ -62,10 +62,7 @@ function Work(): ReactNode {
         {companyData.jobTitle && (
           <section className="workHeader">
             <p className="jobRole">{companyData.jobTitle}</p>
-            <p className="companyName">
-              <p>at</p>
-              {companyData.companyName}
-            </p>
+            <p className="companyName">at {companyData.companyName}</p>
           </section>
         )}
         {companyData.jobDescription && (
