@@ -40,14 +40,8 @@ const db = getFirestore(app);
 export function DataProvider({ children }: { children: ReactNode }): ReactNode {
   const [experienceData, setExperienceData] =
     useState<QueryDocumentSnapshot<DocumentData, DocumentData>[]>();
-  const [projectData, setProjectData] =
-    useState<QueryDocumentSnapshot<DocumentData, DocumentData>[]>();
   const [loading, setLoading] = useState<boolean>(true);
 
-  const projectRef = query(
-    collection(db, '/PersonalProjects'),
-    where('active', '==', true),
-  );
   const experienceRef = query(
     collection(db, '/WorkHistory'),
     where('active', '==', true),
@@ -55,19 +49,17 @@ export function DataProvider({ children }: { children: ReactNode }): ReactNode {
 
   useEffect(() => {
     getDocs(experienceRef).then((doc) => setExperienceData(doc.docs));
-    getDocs(projectRef).then((doc) => setProjectData(doc.docs));
   }, []);
 
   useEffect(() => {
-    if (experienceData != undefined && projectData != undefined) {
+    if (experienceData != undefined) {
       setLoading(false);
     }
-  }, [experienceData, projectData]);
+  }, [experienceData]);
 
   const value = {
     loading,
     experienceData,
-    projectData,
   };
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
