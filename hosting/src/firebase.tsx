@@ -37,15 +37,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const experienceRef = query(
+  collection(db, '/WorkHistory'),
+  where('visibility', '==', 'public'),
+);
+
 export function DataProvider({ children }: { children: ReactNode }): ReactNode {
   const [experienceData, setExperienceData] =
     useState<QueryDocumentSnapshot<DocumentData, DocumentData>[]>();
   const [loading, setLoading] = useState<boolean>(true);
-
-  const experienceRef = query(
-    collection(db, '/WorkHistory'),
-    where('active', '==', true),
-  );
 
   useEffect(() => {
     getDocs(experienceRef).then((doc) => setExperienceData(doc.docs));
