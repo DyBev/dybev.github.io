@@ -50,7 +50,7 @@ function App(): ReactNode {
         </nav>
       </header>
       <section className="welcome" id="welcome">
-        <p className="bigText">Welcome</p>
+        <h1 className="bigText">Welcome</h1>
         <p>I am a software developer currently working in web environments</p>
         <p>Looking for my next problem to solve</p>
         <section className="languageIcons">
