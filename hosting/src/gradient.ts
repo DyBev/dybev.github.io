@@ -6,7 +6,7 @@ let gradient_direction = 0.5;
 
 export function randomGradient() {
   const welcomeText: HTMLElement | null = document.querySelector(
-    'section.welcome p.bigText',
+    'section.welcome h1.bigText',
   );
 
   if (welcomeText == null) {

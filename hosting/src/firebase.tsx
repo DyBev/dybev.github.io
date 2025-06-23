@@ -7,8 +7,10 @@ import {
   DocumentData,
   query,
   where,
+  addDoc,
 } from 'firebase/firestore';
 import React, { ReactNode, useContext, useEffect, useState } from 'react';
+import { z } from 'zod/v4';
 
 type Context = {
   loading: boolean;
@@ -41,6 +43,20 @@ const experienceRef = query(
   collection(db, '/WorkHistory'),
   where('visibility', '==', 'public'),
 );
+
+const contactRef = collection(db, '/ContactForm');
+
+const ContactData = z.object({
+  name: z.string().default(''),
+  email: z.email().default(''),
+  message: z.string().default(''),
+});
+
+export type ContactData = z.infer<typeof ContactData>;
+
+export const sendContact = (data: ContactData) => {
+  return addDoc(contactRef, ContactData.parse(data));
+};
 
 export function DataProvider({ children }: { children: ReactNode }): ReactNode {
   const [experienceData, setExperienceData] =

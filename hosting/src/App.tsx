@@ -5,6 +5,7 @@ import { ReactNode, useEffect } from 'react';
 import { DocumentData } from 'firebase/firestore';
 import { useData } from './firebase.tsx';
 import { Link, useParams, useNavigate } from 'react-router-dom';
+import Contact from './contact/Contact.tsx';
 
 function App(): ReactNode {
   const { experienceData } = useData();
@@ -104,6 +105,7 @@ function App(): ReactNode {
           {!experienceData && <TileSkelenton />}
         </div>
       </section>
+      <Contact />
     </>
   );
 }
