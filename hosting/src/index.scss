@@ -337,7 +337,6 @@ section {
 	&:has(+ section.footerElement) {
 		height: calc(100vh - 128px - 48px);
 		scroll-snap-align: none;
-		padding-bottom: 80px;
 	}
 
 	&.footerElement {
