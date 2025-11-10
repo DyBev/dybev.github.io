@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dylan's Emporium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+  </head>
+  <body class="main fade-in">
+    <nav>
+      <section>
+        <a href="#welcome">Dylan</a>
+        <div class="spacer" ></div>
+        <a href="#Career">Career</a>
+        <a href="#Projects">Projects</a>
+        <a href="#Contact">Contact</a>
+      </section>
+    </nav>
+    <section id="welcome">
+      <div class="headerContainer">
+        <h1>Hello! Welcome!</h1>
+        <h2>I'm Dylan</h2>
+      </div>
+      <p>
+        I am a software developer current working in web environments, looking for my next problem to solve. My foundation is in HTML/CSS with JS and I am currently working in React at American express.
+        <br />
+        <br />
+        In my own time I have got 2 projects currently active, allowing me to dabble in back-end languages and cloud infrastructure, currently learning GO and working with AWS, utilizing products such as S3, API gateway, DynamoDB and Lambda.
+        <br />
+        <br />
+        With some of the local work using SQLite and Python. Below you can see a list of languages that I am comfortable using, followed by languages that I am currently learning.</p>
+      <div class="languageContainer">
+        <div class="comfortable">
+          <img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+          <img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+          <img
+            alt="Typescript"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
+          />
+          <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+          <img alt="Sqlite" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+        </div>
+        <div class="cloudInfra">
+          <img
+            alt="Google Firebase"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
+          />
+          <img
+            alt="Amazon Web Services"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+          />
+        </div>
+        <div class="learning">
+          <img alt="Go lang" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" />
+          <img alt="HTMX" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/htmx/htmx-original-wordmark.svg" />
+        </div>
+      </div>
+    </section>
+    <section id="Career">
+      <h2>Career</h2>
+      <section>
+        <div class="careerHeader">
+          <div class="img">
+            <div class="gradient"></div>
+            <img src="./public/american-express-logo.png">
+          </div>
+          <h3 class="heading-1">Software Engineer I</h3>
+          <h4 class="heading-2">American Express</h4>
+          <span class="dates"><i>Sep 2024 - Current</i></span>
+        </div>
+        <div class="careerBody">
+          <ul>
+            <li>Introduced github actions to the CI/CD pipeline, automating the deployment and testing process</li>
+            <li>Migrated old React HOC/Class components to use new functional/Hook patterns</li>
+            <li>Initiated a JS to TS migration, teaching peers on TS practices</li>
+            <li>Implemented Compound Component patterns to reduce the reliance on in-code conditionals in component packages</li>
+            <li>Abstracted commonly used logic across business teams to a single package</li>
+            <li>Debugging, RCA and implementing urgent fixes during ramp-up periods with minimal user impact</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="careerHeader">
+          <div class="img">
+            <div class="gradient higher-contrast"></div>
+            <img src="./public/mind-ease-logo.png">
+          </div>
+          <h3 class="heading-1">Engineer</h3>
+          <h4 class="heading-2">Mind Ease</h4>
+          <span class="dates"><i>Sep 2022 - Sep 2024</i></span>
+        </div>
+        <div class="careerBody">
+          <ul>
+            <li>Implemented tooling to allow product owners to create and manage content without developer involvement</li>
+            <li>Improved intractability of a HTML/CSS web app by using JS to implement custom logic and event loops improving user experience</li>
+            <li>Conducting user interviews to understand what the users like dislike and want out of the app</li>
+            <li>Ownership of 3 of the 5 main sections of the App: breathing tool, ChatGPT powered chat bot, Daily recommendations, as well as maintaining about 50% of the core app Exercises</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+    <section id="Projects">
+      <h2>Projects</h2>
+      <section>
+        <div class="careerHeader">
+          <h3 class="heading-2">Fantasy Football app</h3>
+          <a href="https://footyapp.dybev.uk"><i>footyapp.dybev.uk</i></a>
+        </div>
+        <div class="careerBody">
+          <ul>
+            <li>Firebase Auth for user authentication</li>
+            <li>Firebase Firestore for storing frequently changed data, user teams and league information, utilising firestore rules to make sure you can only read information you need to read</li>
+            <li>AWS S3 for hosting the static Vite+React build files, and longer term data, such as player information, with cloudfront used for caching data closer to the user</li>
+            <li>Locally run Python + SQLite to crunch and process the data retrieved from <a href="https://api-football.com">api-football.com</a></li>
+            <li>Currently working on rewriting the Python code to GO for type safety and maintainability + make use of concurrency when processing multiple fixtures</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="careerHeader">
+          <h3 class="heading-2">Simplelytics</h3>
+          <span><i>private, learn about AWS CI</i></span>
+        </div>
+        <div class="careerBody">
+          <ul>
+            <li>Project to add simple trigger based tracking to any application</li>
+            <li>Utilising managed services such as: DynamoDB, Lambda, api-gateway, S3 to store and manage the data retrieved</li>
+            <li>Utilising AWS cognito with authorisation on the api-gateway ensuring users can only register apps when they have the necessary permissions</li>
+            <li>Utilising AWS Lambda to create APIs that allow the user to: record events, register apps, retrieve apps, and retrieve app events written in TS and using Bun as the build and runtime</li>
+            <li>Multi-stage deployment ensuring that fully tested functions hit production minimising downtime</li>
+          </ul>
+        </div>
+      </section>
+    </section>
+    <section id="Contact">
+      <h2>Contact</h2>
+      <section id="form-container">
+        <form
+          class="contact-form"
+          hx-post="/api/contact"
+          hx-target="this"
+          hx-encoding="json"
+          hx-swap="outerHTML"
+        >
+          <label>Name:</label>
+          <input type="text" name="name" placeholder="Your Name" required />
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="Your Email" required />
+          <label>Message:</label>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <div class="form-footer">
+            <div
+              id="loading"
+              hx-indicator 
+              class="loading-indicator"
+              role="status"
+              aria-live="polite"
+            >
+              <img src="./public/circle-stroke.svg"></img>
+              Sending...
+            </div>
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </section>
+    </section>
+  </body>
+</html>
