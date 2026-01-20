@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
-    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
   </head>
   <body class="main fade-in">
     <nav>
@@ -67,7 +67,7 @@
             <div class="gradient"></div>
             <img src="./public/american-express-logo.png">
           </div>
-          <h3 class="heading-1">Software Engineer I</h3>
+          <h3 class="heading-1">Software Engineer II</h3>
           <h4 class="heading-2">American Express</h4>
           <span class="dates"><i>Sep 2024 - Current</i></span>
         </div>
@@ -129,7 +129,7 @@
             <li>Project to add simple trigger based tracking to any application</li>
             <li>Utilising managed services such as: DynamoDB, Lambda, api-gateway, S3 to store and manage the data retrieved</li>
             <li>Utilising AWS cognito with authorisation on the api-gateway ensuring users can only register apps when they have the necessary permissions</li>
-            <li>Utilising AWS Lambda to create APIs that allow the user to: record events, register apps, retrieve apps, and retrieve app events written in TS and using Bun as the build and runtime</li>
+            <li>Utilising AWS Lambda to create APIs that allow the user to: record events, register apps, retrieve apps, and retrieve app events written in Go</li>
             <li>Multi-stage deployment ensuring that fully tested functions hit production minimising downtime</li>
           </ul>
         </div>
@@ -146,15 +146,15 @@
           hx-swap="outerHTML"
         >
           <label>Name:</label>
-          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="text" name="name" placeholder="Your Name" required/>
           <label>Email:</label>
-          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="email" name="email" placeholder="Your Email" required/>
           <label>Message:</label>
           <textarea name="message" placeholder="Your Message" required></textarea>
           <div class="form-footer">
             <div
               id="loading"
-              hx-indicator 
+              hx-indicator
               class="loading-indicator"
               role="status"
               aria-live="polite"
