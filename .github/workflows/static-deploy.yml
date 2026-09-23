@@ -47,4 +47,4 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy to S3
         run: |
-          cd ./static && aws s3 sync . s3://${{ secrets.AWS_BUCKET }} --dryrun
+          cd ./static && aws s3 sync . s3://${{ secrets.AWS_BUCKET }}
