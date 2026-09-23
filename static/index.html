@@ -42,6 +42,8 @@
           />
           <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
           <img alt="Sqlite" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
+          <img alt="Go lang" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" />
+          <img alt="HTMX" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/htmx/htmx-original-wordmark.svg" />
         </div>
         <div class="cloudInfra">
           <img
@@ -52,10 +54,6 @@
             alt="Amazon Web Services"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
           />
-        </div>
-        <div class="learning">
-          <img alt="Go lang" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" />
-          <img alt="HTMX" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/htmx/htmx-original-wordmark.svg" />
         </div>
       </div>
     </section>
@@ -73,6 +71,7 @@
         </div>
         <div class="careerBody">
           <ul>
+            <li>Contributing to the architecture of the applications balancing Developer experience, Growth and Business needs and flexibility</li>
             <li>Introduced github actions to the CI/CD pipeline, automating the deployment and testing process</li>
             <li>Migrated old React HOC/Class components to use new functional/Hook patterns</li>
             <li>Initiated a JS to TS migration, teaching peers on TS practices</li>
@@ -106,15 +105,30 @@
       <h2>Projects</h2>
       <section>
         <div class="careerHeader">
+          <h3 class="heading-2">Workout Tracker</h3>
+          <a href="https://workout.dybev.uk">workout.dybev.uk</a>
+        </div>
+        <div class="careerBody">
+          <ul>
+            <li>Small project to help me track my own workouts</li>
+            <li>Data stored in DynamoDB where each workout includes all the information it needs, exercises, weights etc.</li>
+            <li>Storage and access is gated behind AWS Cognito with IAM rulesets and via a lambda function with auth requirements in order to ensure that only users who are the owners of the data have access to the data</li>
+            <li>Lambda functions written in Golang and the FE is a statically hosted Vite+React on AWS S3</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="careerHeader">
           <h3 class="heading-2">Fantasy Football app</h3>
-          <a href="https://footyapp.dybev.uk"><i>footyapp.dybev.uk</i></a>
+          <i><s>footyapp.dybev.uk</s> deprecated</i>
+          <p><i>Project stopped due to ongoing overhead for maintenance and data sources requiring a paid subscription</i></p>
         </div>
         <div class="careerBody">
           <ul>
             <li>Firebase Auth for user authentication</li>
             <li>Firebase Firestore for storing frequently changed data, user teams and league information, utilising firestore rules to make sure you can only read information you need to read</li>
             <li>AWS S3 for hosting the static Vite+React build files, and longer term data, such as player information, with cloudfront used for caching data closer to the user</li>
-            <li>Locally run Python + SQLite to crunch and process the data retrieved from <a href="https://api-football.com">api-football.com</a></li>
+            <li>AWS lambda +  to crunch and process the data retrieved from <a href="https://api-football.com">api-football.com</a></li>
             <li>Currently working on rewriting the Python code to GO for type safety and maintainability + make use of concurrency when processing multiple fixtures</li>
           </ul>
         </div>
