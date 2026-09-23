@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-pogress: false
+  cancel-in-progress: false
 
 jobs:
   deploy-github-pages:
