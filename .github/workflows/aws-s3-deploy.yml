@@ -1,9 +1,9 @@
 # Workflow for deploying static content to GitHub Pages and S3
-name: Deploy static content to Pages
+name: Deploy content to S3
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
     pages: './static/**'
 
 permissions:
