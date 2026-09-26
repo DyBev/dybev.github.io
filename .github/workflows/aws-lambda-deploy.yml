@@ -2,10 +2,15 @@ name: Deploy AWS Lambda
 
 on:
   push:
-    branches: [ main ]
+    branches: [ 'main' ]
+    paths: './functions/**'
 
 permissions:
   contents: read
+
+concurrency:
+  group: 'aws-lambda'
+  cancel-in-progress: false
 
 jobs:
   deploy-functions:

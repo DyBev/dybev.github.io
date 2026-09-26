@@ -2,8 +2,8 @@ name: Deploy content to Github
 
 on:
   push:
-    branches: ["main"]
-    paths: "./src/**"
+    branches: ['main']
+    paths: './src/**'
 
 permissions:
   contents: read
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "github-pages"
+  group: 'github-pages'
   cancel-in-progress: false
 
 jobs:

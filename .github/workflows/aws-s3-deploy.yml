@@ -3,16 +3,14 @@ name: Deploy content to S3
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ 'main' ]
     paths: './static/**'
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "aws-s3"
+  group: 'aws-s3'
   cancel-in-progress: false
 
 jobs:
