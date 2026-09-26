@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"context"
-	"net/url"
 	"encoding/base64"
+	"fmt"
+	"net/url"
+	"os"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-sdk-go-v2/aws"
@@ -99,7 +100,7 @@ func HandleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (
 
 	input := &ses.SendEmailInput{
 		Destination: &types.Destination{
-			ToAddresses: []string{"dylan@dybev.uk"},
+			ToAddresses: []string{os.Getenv("TO_EMAIL")},
 		},
 		Message: &types.Message{
 			Subject: &types.Content{
@@ -112,7 +113,7 @@ func HandleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (
 			},
 		},
 		ReplyToAddresses: []string{email},
-		Source: aws.String("no-reply@dybev.uk"),
+		Source: aws.String(os.Getenv("SROUCE_EMAIL")),
 	}
 
 	resp, err := client.SendEmail(ctx, input)
