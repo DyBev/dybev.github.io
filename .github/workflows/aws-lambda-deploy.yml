@@ -22,10 +22,9 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.26.7
-
-      - name: set Go env
-        run: go env -w GO111MODULE=auto
+          go-version-file: go.mod
+          cache: true
+          cache-dependency-path: go.sum
 
       - name: Install Dependencies
         run: |
@@ -38,5 +37,5 @@ jobs:
         uses: aws-actions/aws-lambda-deploy@v1
         with:
           function-name: my-lambda-function
-          code-artifacts-dir: ./bulid/contact
+          code-artifacts-dir: ./build/contact
           dry-run: true
