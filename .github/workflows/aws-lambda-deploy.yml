@@ -42,5 +42,3 @@ jobs:
           function-name: ${{ secrets.AWS_LAMBDA_CONTACT_FUNCTION }}
           code-artifacts-dir: ./build/contact
           dry-run: true
-          runtime: provided.al2023
-          handler: bootstrap
