@@ -1,4 +1,4 @@
-module dybev-personal-portfolio
+module github.com/dybev/github.dybev.io
 
 go 1.26.7
 
