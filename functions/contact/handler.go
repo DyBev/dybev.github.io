@@ -113,7 +113,7 @@ func HandleRequest(ctx context.Context, request events.APIGatewayProxyRequest) (
 			},
 		},
 		ReplyToAddresses: []string{email},
-		Source: aws.String(os.Getenv("SROUCE_EMAIL")),
+		Source: aws.String(os.Getenv("SOURCE_EMAIL")),
 	}
 
 	resp, err := client.SendEmail(ctx, input)
