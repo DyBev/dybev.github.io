@@ -37,7 +37,7 @@ jobs:
         run: ./manage.sh build contact
 
       - name: Deploy Lambda Function
-        run: aws lambda update-function-code /
-          --function-name ${{ secrets.AWS_LAMBDA_CONTACT_FUNCTION }} /
-          --zip-file ./build/contact.zip /
+        run: aws lambda update-function-code \
+          --function-name ${{ secrets.AWS_LAMBDA_CONTACT_FUNCTION }} \
+          --zip-file ./build/contact.zip \
           > /dev/null 2>&1
