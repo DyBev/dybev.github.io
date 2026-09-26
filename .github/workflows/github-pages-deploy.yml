@@ -3,7 +3,7 @@ name: Deploy content to Github
 on:
   push:
     branches: ['main']
-    paths: './src/**'
+    paths: 'src/**'
 
 permissions:
   contents: read

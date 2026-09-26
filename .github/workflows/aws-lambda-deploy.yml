@@ -3,7 +3,7 @@ name: Deploy AWS Lambda
 on:
   push:
     branches: [ 'main' ]
-    paths: './functions/**'
+    paths: 'functions/**'
 
 permissions:
   contents: read

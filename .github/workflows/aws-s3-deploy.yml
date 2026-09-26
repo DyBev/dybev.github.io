@@ -4,7 +4,7 @@ name: Deploy content to S3
 on:
   push:
     branches: [ 'main' ]
-    paths: './static/**'
+    paths: 'static/**'
 
 permissions:
   contents: read
