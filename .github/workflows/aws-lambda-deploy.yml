@@ -24,6 +24,9 @@ jobs:
         with:
           go-version: 1.26.7
 
+      - name: set Go env
+        run: go env -w GO111MODULE=auto
+
       - name: Install Dependencies
         run: |
           go get .
