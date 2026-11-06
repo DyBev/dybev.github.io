@@ -1,187 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Dylan's Emporium</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800" rel="stylesheet">
-    <link rel="stylesheet" href="./index.css">
-    <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
-  </head>
-  <body class="main fade-in">
-    <nav>
-      <section>
-        <a href="#welcome">Dylan</a>
-        <div class="spacer" ></div>
-        <a href="#Career">Career</a>
-        <a href="#Projects">Projects</a>
-        <a href="#Contact">Contact</a>
-      </section>
-    </nav>
-    <section id="welcome">
-      <div class="headerContainer">
-        <h1>Hello! Welcome!</h1>
-        <h2>I'm Dylan</h2>
-      </div>
-      <p>
-        I am a software developer current working in web environments, looking for my next problem to solve. My foundation is in HTML/CSS with JS and I am currently working in React at American express.
-        <br />
-        <br />
-        In my own time I have got 2 projects currently active, allowing me to dabble in back-end languages and cloud infrastructure, currently learning GO and working with AWS, utilizing products such as S3, API gateway, DynamoDB and Lambda, with some of the local work using SQLite and Python.
-        <br />
-        <br />
-        Below you can see a list of languages that I am comfortable using, followed by languages that I am currently learning.</p>
-      <div class="languageContainer">
-        <div class="comfortable">
-          <img alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-          <img alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-          <img
-            alt="Typescript"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg"
-          />
-          <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
-          <img alt="Sqlite" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" />
-          <img alt="Go lang" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" />
-          <img alt="HTMX" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/htmx/htmx-original-wordmark.svg" />
-        </div>
-        <div class="cloudInfra">
-          <img
-            alt="Google Firebase"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg"
-          />
-          <img
-            alt="Amazon Web Services"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="Career">
-      <h2>Career</h2>
-      <section>
-        <div class="careerHeader">
-          <div class="img">
-            <div class="gradient"></div>
-            <img src="./public/american-express-logo.png">
-          </div>
-          <h3 class="heading-1">Software Engineer II</h3>
-          <h4 class="heading-2">American Express</h4>
-          <span class="dates"><i>Sep 2024 - Current</i></span>
-        </div>
-        <div class="careerBody">
-            <p>Joining the Travel Pre-Booking web team, supporting pages across <span class="code-text">americanexpress.com/{locale}/travel/*</span>, balancing developer experience, business requirements, scalability, and maintainability.</p>
-          <ul>
-            <li>Contributing to the architecture of the applications balancing Developer experience, Growth and Business needs and flexibility</li>
-            <li>Introduced github actions to the CI/CD pipeline, automating the deployment and testing process</li>
-            <li>Migrated old React HOC/Class components to use new functional/Hook patterns</li>
-            <li>Initiated a JS to TS migration, teaching peers on TS practices</li>
-            <li>Implemented Compound Component patterns to reduce the reliance on in-code conditionals in component packages</li>
-            <li>Abstracted commonly used logic across business teams to a single package</li>
-            <li>Debugging, RCA and implementing urgent fixes during ramp-up periods with minimal user impact</li>
-          </ul>
-        </div>
-      </section>
-      <section>
-        <div class="careerHeader">
-          <div class="img">
-            <div class="gradient higher-contrast"></div>
-            <img src="./public/mind-ease-logo.png">
-          </div>
-          <h3 class="heading-1">Engineer</h3>
-          <h4 class="heading-2">Mind Ease</h4>
-          <span class="dates"><i>Sep 2022 - Sep 2024</i></span>
-        </div>
-        <div class="careerBody">
-          <p>One of two engineers at the company, taking significant ownership of product development across core application features, internal tooling, and ongoing maintenance.</p>
-          <ul>
-            <li>Ownership of 3 of the 5 main sections of the App: breathing tool, ChatGPT powered chat bot, Daily recommendations, as well as maintaining about 50% of the core app Exercises</li>
-            <li>Implemented tooling to allow product owners to create and manage content without developer involvement</li>
-            <li>Improved intractability of a HTML/CSS web app by using JS to implement custom logic and event loops improving user experience</li>
-            <li>Conducting user interviews to understand what the users like dislike and want out of the app</li>
-          </ul>
-        </div>
-      </section>
-    </section>
-    <section id="Projects">
-      <h2>Projects</h2>
-      <section>
-        <div class="careerHeader">
-          <h3 class="heading-2">Workout Tracker</h3>
-          <a href="https://workout.dybev.uk">workout.dybev.uk</a>
-        </div>
-        <div class="careerBody">
-          <ul>
-            <li>Small project to help me track my own workouts</li>
-            <li>Data stored in DynamoDB where each workout includes all the information it needs, exercises, weights etc.</li>
-            <li>Storage and access is gated behind AWS Cognito with IAM rulesets and via a lambda function with auth requirements in order to ensure that only users who are the owners of the data have access to the data</li>
-            <li>Lambda functions written in Golang and the FE is a statically hosted Vite+React on AWS S3</li>
-          </ul>
-        </div>
-      </section>
-      <section>
-        <div class="careerHeader">
-          <h3 class="heading-2">Fantasy Football app</h3>
-          <i><s>footyapp.dybev.uk</s> deprecated</i>
-          <p><i>Project stopped due to ongoing overhead for maintenance and data sources requiring a paid subscription</i></p>
-        </div>
-        <div class="careerBody">
-          <ul>
-            <li>Firebase Auth for user authentication</li>
-            <li>Firebase Firestore for storing frequently changed data, user teams and league information, utilising firestore rules to make sure you can only read information you need to read</li>
-            <li>AWS S3 for hosting the static Vite+React build files, and longer term data, such as player information, with cloudfront used for caching data closer to the user</li>
-            <li>AWS lambda +  to crunch and process the data retrieved from <a href="https://api-football.com">api-football.com</a></li>
-            <li>Currently working on rewriting the Python code to GO for type safety and maintainability + make use of concurrency when processing multiple fixtures</li>
-          </ul>
-        </div>
-      </section>
-      <section>
-        <div class="careerHeader">
-          <h3 class="heading-2">Simplelytics</h3>
-          <span><i>private, learn about AWS CI</i></span>
-        </div>
-        <div class="careerBody">
-          <ul>
-            <li>Project to add simple trigger based tracking to any application</li>
-            <li>Utilising managed services such as: DynamoDB, Lambda, api-gateway, S3 to store and manage the data retrieved</li>
-            <li>Utilising AWS cognito with authorisation on the api-gateway ensuring users can only register apps when they have the necessary permissions</li>
-            <li>Utilising AWS Lambda to create APIs that allow the user to: record events, register apps, retrieve apps, and retrieve app events written in Go</li>
-            <li>Multi-stage deployment ensuring that fully tested functions hit production minimising downtime</li>
-          </ul>
-        </div>
-      </section>
-    </section>
-    <section id="Contact">
-      <h2>Contact</h2>
-      <section id="form-container">
-        <form
-          class="contact-form"
-          hx-post="/api/contact"
-          hx-target="this"
-          hx-encoding="json"
-          hx-swap="outerHTML"
+    <head>
+        <title>Dylan Bevan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800"
+        rel="stylesheet"
         >
-          <label>Name:</label>
-          <input type="text" name="name" placeholder="Your Name" required/>
-          <label>Email:</label>
-          <input type="email" name="email" placeholder="Your Email" required/>
-          <label>Message:</label>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <div class="form-footer">
-            <div
-              id="loading"
-              hx-indicator
-              class="loading-indicator"
-              role="status"
-              aria-live="polite"
-            >
-              <img src="./public/circle-stroke.svg"></img>
-              Sending...
+        <link rel="stylesheet" href="./index.css">
+        <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
+    </head>
+    <body class="main fade-in">
+        <nav>
+            <section>
+                <p class="no-break" >Dylan Bevan</p>
+                <div class="spacer" ></div>
+                <p>2026.10</p>
+                <p class="no-break" > / portfolio</p>
+            </section>
+        </nav>
+
+        <section id="about">
+            <div class="section-header">
+                <h1>About</h1>
+                <div class="header-sub-section">
+                    <p class="no-break supporting-text">Software Engineer</p>
+                    <p class="no-break sub-text">London, UK</p>
+                    <p class="no-break sub-text font-secondary">51.50722° N, 0.12750° W</p>
+                    <a href="" class="no-break sub-text">Download CV (PDF)</a>
+                </div>
+                <div class="world-map" >
+                    <image src="./public/map.svg" />
+                    <div class="overlay"></div>
+                </div>
             </div>
-            <button type="submit">Send</button>
-          </div>
-        </form>
-      </section>
-    </section>
-  </body>
+            <div class="about-content">
+                <div class="paragraph-container">
+                    <p>A full-stack software engineer, with 4+ years of experience in both web and mobile applications. Currently working at <a href="/experience/american-express">American Express</a> contributing to the pre-booking web platform. Contributing to the Architecture and Technical directions of our pages.</p>
+                    <p>With an interest in Architecture I bring my interests with me, challenging the function and purpose of features to removed the need for feature bloat, believing that a small number of well architected features are more important than having as many features as you can fit in, a feature “Parti” if you must.</p>
+                    <p>Of course my passion is software development and I enjoy every second that I get to spend crafting software but I also keep an interest in Space, racing and of course Architecture.</p>
+                </div>
+                <div class="image-container">
+                    <img src="/public/dylan.png" class="image-of-me" />
+                </div>
+            </div>
+        </section>
+
+        <section class="languages-container">
+            <img src="/public/html.svg" class="language-image" />
+            <img src="/public/css.svg" class="language-image" />
+            <img src="/public/typescript.svg" class="language-image" />
+            <img src="/public/go-lang.svg" class="language-image" />
+            <img src="/public/python.svg" class="language-image" />
+            <img src="/public/aws.svg" class="language-image" />
+            <img src="/public/sql.svg" class="language-image" />
+        </section>
+
+        <section id="Contact">
+            <h2>Contact</h2>
+            <section id="form-container">
+                <form
+                    class="contact-form"
+                    hx-post="/api/contact"
+                    hx-target="this"
+                    hx-encoding="json"
+                    hx-swap="outerHTML"
+                    >
+                    <label>Name:</label>
+                    <input type="text" name="name" placeholder="Your Name" required/>
+                    <label>Email:</label>
+                    <input type="email" name="email" placeholder="Your Email" required/>
+                    <label>Message:</label>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <div class="form-footer">
+                        <div
+                            id="loading"
+                            hx-indicator
+                            class="loading-indicator"
+                            role="status"
+                            aria-live="polite"
+                            >
+                            <img src="./public/circle-stroke.svg"></img>
+                            Sending...
+                        </div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </body>
 </html>
