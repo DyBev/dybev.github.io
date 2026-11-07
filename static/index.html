@@ -13,7 +13,7 @@
         <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
     </head>
     <body class="main fade-in">
-        <nav>
+        <nav class="header">
             <section>
                 <p class="no-break" >Dylan Bevan</p>
                 <div class="spacer" ></div>
@@ -32,34 +32,77 @@
                     <a href="" class="no-break sub-text">Download CV (PDF)</a>
                 </div>
                 <div class="world-map" >
-                    <image src="./public/map.svg" />
+                    <image alt="" src="./public/map.svg" />
                     <div class="overlay"></div>
                 </div>
             </div>
             <div class="about-content">
                 <div class="paragraph-container">
-                    <p>A full-stack software engineer, with 4+ years of experience in both web and mobile applications. Currently working at <a href="/experience/american-express">American Express</a> contributing to the pre-booking web platform. Contributing to the Architecture and Technical directions of our pages.</p>
-                    <p>With an interest in Architecture I bring my interests with me, challenging the function and purpose of features to removed the need for feature bloat, believing that a small number of well architected features are more important than having as many features as you can fit in, a feature “Parti” if you must.</p>
+                    <p>A full-stack software engineer, with 4+ years of experience in both web and mobile applications. Currently working at <a href="/experience/american-express">American Express</a> contributing to the pre-booking web platform's Architecture and Technical direction.</p>
+                    <p>With an interest in Architecture I bring my interests with me, challenging the function and purpose of features to remove the need for feature bloat. I believe that a small number of well architected features are more important than having as many features as you can fit in, a feature "Parti" if you must.</p>
                     <p>Of course my passion is software development and I enjoy every second that I get to spend crafting software but I also keep an interest in Space, racing and of course Architecture.</p>
                 </div>
                 <div class="image-container">
-                    <img src="/public/dylan.png" class="image-of-me" />
+                    <img alt="" src="/public/dylan.png" class="image-of-me" />
                 </div>
             </div>
         </section>
 
         <section class="languages-container">
-            <img src="/public/html.svg" class="language-image" />
-            <img src="/public/css.svg" class="language-image" />
-            <img src="/public/typescript.svg" class="language-image" />
-            <img src="/public/go-lang.svg" class="language-image" />
-            <img src="/public/python.svg" class="language-image" />
-            <img src="/public/aws.svg" class="language-image" />
-            <img src="/public/sql.svg" class="language-image" />
+            <img src="/public/html.svg" alt="html" class="language-image" />
+            <img src="/public/css.svg" alt="css" class="language-image" />
+            <img src="/public/typescript.svg" alt="typescript" class="language-image" />
+            <img src="/public/go-lang.svg" alt="go lang" class="language-image" />
+            <img src="/public/python.svg" alt="python" class="language-image" />
+            <img src="/public/aws.svg" alt="amazon web services (AWS)" class="language-image" />
+            <img src="/public/sql.svg" alt="structured query language (SQL)" class="language-image" />
         </section>
 
-        <section id="Contact">
-            <h2>Contact</h2>
+        <section class="more-information">
+            <section class="know-more">
+                <div class="more-information-text-container">
+                    <h2 class="more-information-header font-highlight">Want to know more?</h2>
+                    <p>Explore my portfolio where I’ve highlighted the work that I’m most proud of by clicking the “next” button at the bottom of the page, or by exploring my Experience or my Projects in your own time, you’ll still experience the curated approach but in you own order</p>
+                </div>
+                <div class="more-information-link-container">
+                    <a href="/experience" >
+                        <img alt="" src="./public/folders.svg" class="link-svg">
+                        <p>experience</p>
+                    </a>
+                    <a href="/projects" >
+                        <img alt="" src="./public/code-tag.svg" class="link-svg">
+                        <p>projects</p>
+                    </a>
+                </div>
+            </section>
+            <section class="explore-more">
+                <div class="more-information-text-container">
+                    <h2 class="more-information-header font-highlight">Want to explore more?</h2>
+                    <p>I’ve created this portfolio as a “curated” experience but curated is not everyone’s vibe so feel free to explore the links below if you’d like to take a more unguided approach, not all my projects are available publicly, and my experience is only available through the curated approach.</p>
+                </div>
+                <div class="more-information-link-container">
+                    <a href="https://github.dybev.uk" >
+                        <img alt="" src="./public/git-branch.svg" class="link-svg">
+                        <p>github</p>
+                    </a>
+                    <a href="https://linkedin.dybev.uk" >
+                        <img alt="" src="./public/linked-in.svg" class="link-svg">
+                        <p>linkedin</p>
+                    </a>
+                </div>
+            </section>
+        </section>
+
+        <dialog 
+            id="contact-modal"
+            class="contact-modal"
+        >
+            <section class="contact-header">
+                <h2>Contact</h2>
+                <button commandfor="contact-modal" command="close">
+                    <img src="./public/close.svg" alt="close" class="link-svg"/>
+                </button>
+            </section>
             <section id="form-container">
                 <form
                     class="contact-form"
@@ -67,13 +110,13 @@
                     hx-target="this"
                     hx-encoding="json"
                     hx-swap="outerHTML"
-                    >
-                    <label>Name:</label>
-                    <input type="text" name="name" placeholder="Your Name" required/>
-                    <label>Email:</label>
-                    <input type="email" name="email" placeholder="Your Email" required/>
-                    <label>Message:</label>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
+                >
+                    <label id="label-name" >Name:</label>
+                    <input aria-labelledby="label-name" type="text" name="name" placeholder="Your Name" required/>
+                    <label id="label-email" >Email:</label>
+                    <input aria-labelledby="label-email" type="email" name="email" placeholder="Your Email" required/>
+                    <label id="label-message" >Message:</label>
+                    <textarea aria-labelledby="label-message" name="message" placeholder="Your Message" required></textarea>
                     <div class="form-footer">
                         <div
                             id="loading"
@@ -81,7 +124,7 @@
                             class="loading-indicator"
                             role="status"
                             aria-live="polite"
-                            >
+                        >
                             <img src="./public/circle-stroke.svg"></img>
                             Sending...
                         </div>
@@ -89,6 +132,17 @@
                     </div>
                 </form>
             </section>
-        </section>
+        </dialog>
+
+        <nav class="footer">
+            <section>
+                <a href="/experience/american-express">
+                    <img src="./public/chevron-right.svg" class="link-svg" alt="next page, experience: American Express"/>
+                </a>
+                <button command="show-modal" commandfor="contact-modal" >
+                    <img src="./public/send.svg" class="link-svg" alt="Open contact form modal"/>
+                </button>
+            </section>
+        </nav>
     </body>
 </html>
