@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html
+    hx-boost="true"
+>
+    <head>
+        <title>Dylan Bevan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800"
+        rel="stylesheet"
+        >
+        <link rel="stylesheet" href="/index.css">
+        <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
+    </head>
+    <body class="main fade-in">
+        <img src="/public/american-express-logo.png" class="experience-logo"/>
+
+        <nav class="header">
+            <section>
+                <p class="no-break" >Dylan Bevan</p>
+                <div class="spacer" ></div>
+                <p>2026.10</p>
+                <a href="/" class="no-break" >/ portfolio</a>
+                <a href="/experience" class="no-break" >/ experience</a>
+                <a href="/experience/american-express" class="no-break" >/ american-express</a>
+            </section>
+        </nav>
+
+        <section id="about">
+            <div class="section-header">
+                <h1 class="experience-header">American Express</h1>
+                <div class="header-sub-section">
+                    <p class="no-break supporting-text">Software Engineer 2</p>
+                    <p class="no-break sub-text">London, UK</p>
+                </div>
+                <div class="world-map" >
+                    <image alt="" src="/public/map.svg" />
+                    <div class="overlay"></div>
+                </div>
+            </div>
+
+            <div class="experience-content">
+                <div class="paragraph-container">
+                    <p>Joining AMEX ~2 years after I got my first job as a software engineer, joining a company as big as AMEX after a start-up really let me focus and tune what I want my impact to be</p>
+                    <p>I found myself in a good spot, being able to really drive the direction of the team by owning and taking ownership, playing key roles in new AMEX initiatives, most recent example being Get Inpsired Personalisation.</p>
+                    <p>In a team like travel pre-booking a lot of our work is driven by marketing / travel trends as such it’s important that the pages can be modified quickly and managed without development involvement, as such I’ve been pushing for more of a CMS+BFF type approach to our pages, making use of the flexibility that a CMS offers and the stability we gain from traditional back-end languages like Kotlin.</p>
+                    <p>I believe myself to be a core contributor to the team, but not a requirement. I always try my hardest to make sure that the entire team is onboard and understands the direction. After all the effort the team can put in as a whole is always going to be greater than the effort a single member can contribute.</p>
+                </div>
+
+                <div class="projects-container">
+                    <div class="projects-header">
+                        <h2>Projects</h2>
+                        <p class="sub-text font-secondary">Most notable recent projects</p>
+                    </div>
+                    <div class="projects-list">
+                        <div class="project-container">
+                            <div class="project-header">
+                                <h3 class="font-highlight">Luxury hotel offers</h3>
+                                <p class="sub-text font-secondary">2026.10 Platform improvements</p>
+                            </div>
+                            <div class="project-content">
+                                <ui>
+                                    <li>Bringing a much needed re-imagination of the luxury hotel offers experience to Amex travel.</li>
+                                    <li>Building a BFF layer to reduce the strain on our SORs and increase the performance of our page</li>
+                                    <li>Improving on the legacy experience by surfacing more hotels more regularly</li>
+                                <ui>
+                            </div>
+                        </div>
+
+                        <div class="project-container">
+                            <div class="project-header">
+                                <h3 class="font-highlight">Get Inspired Personalisation</h3>
+                                <p class="sub-text font-secondary">2026.08 Personalisation</p>
+                            </div>
+                            <div class="project-content">
+                                <ui>
+                                    <li>Bringing personalised inspirational articles to the card-members</li>
+                                    <li>With a focus on driving a more dynamic experience on travel pages, increasing click-through rates</li>
+                                    <li>Working with marketing, and Analytics to make decisions on the best articles to surface to the users</li>
+                                <ui>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="languages-container">
+                </div>
+            </div>
+        </section>
+
+        <dialog
+            id="contact-modal"
+            class="contact-modal"
+        >
+            <section class="contact-header">
+                <h2>Contact</h2>
+                <button commandfor="contact-modal" command="close">
+                    <img src="/public/close.svg" alt="close" class="link-svg"/>
+                </button>
+            </section>
+            <section id="form-container">
+                <form
+                    class="contact-form"
+                    hx-post="/api/contact"
+                    hx-target="this"
+                    hx-encoding="json"
+                    hx-swap="outerHTML"
+                >
+                    <label id="label-name" >Name:</label>
+                    <input aria-labelledby="label-name" type="text" name="name" placeholder="Your Name" required/>
+                    <label id="label-email" >Email:</label>
+                    <input aria-labelledby="label-email" type="email" name="email" placeholder="Your Email" required/>
+                    <label id="label-message" >Message:</label>
+                    <textarea aria-labelledby="label-message" name="message" placeholder="Your Message" required></textarea>
+                    <div class="form-footer">
+                        <div
+                            id="loading"
+                            hx-indicator
+                            class="loading-indicator"
+                            role="status"
+                            aria-live="polite"
+                        >
+                            <img src="/public/circle-stroke.svg"></img>
+                            Sending...
+                        </div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+        </dialog>
+
+        <nav class="footer">
+            <section>
+                <a href="/projects/workout-tracker">
+                    <img src="/public/chevron-right.svg" class="link-svg" alt="next page, experience: American Express"/>
+                </a>
+                <button command="show-modal" commandfor="contact-modal" >
+                    <img src="/public/send.svg" class="link-svg" alt="Open contact form modal"/>
+                </button>
+            </section>
+        </nav>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html
+    hx-boost="true"
+>
+    <head>
+        <title>Dylan Bevan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800"
+        rel="stylesheet"
+        >
+        <link rel="stylesheet" href="/index.css">
+        <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
+    </head>
+    <body class="main fade-in">
+        <nav class="header">
+            <section>
+                <p class="no-break" >Dylan Bevan</p>
+                <div class="spacer" ></div>
+                <p>2026.10</p>
+                <a href="/" class="no-break" >/ portfolio</a>
+                <a href="." class="no-break" >/ projects</a>
+            </section>
+        </nav>
+
+        <section id="about">
+            <div class="section-header">
+                <h1 class="experience-header">Projects</h1>
+            </div>
+
+            <div class="link-wall-content">
+                <div class="link-wall">
+                    <p>Here you’ll find all the links to my projects, if the experience is <span class="portfolio-highlight">part of the portfolio (p)</span> you’ll be able to continue following the portfolio from that location</p>
+                    <li><a href="./workout-tracker" class="portfolio-highlight">Workout Tracker (p)</a></li>
+                </div>
+            </div>
+        </section>
+
+        <dialog
+            id="contact-modal"
+            class="contact-modal"
+        >
+            <section class="contact-header">
+                <h2>Contact</h2>
+                <button commandfor="contact-modal" command="close">
+                    <img src="/public/close.svg" alt="close" class="link-svg"/>
+                </button>
+            </section>
+            <section id="form-container">
+                <form
+                    class="contact-form"
+                    hx-post="/api/contact"
+                    hx-target="this"
+                    hx-encoding="json"
+                    hx-swap="outerHTML"
+                >
+                    <label id="label-name" >Name:</label>
+                    <input aria-labelledby="label-name" type="text" name="name" placeholder="Your Name" required/>
+                    <label id="label-email" >Email:</label>
+                    <input aria-labelledby="label-email" type="email" name="email" placeholder="Your Email" required/>
+                    <label id="label-message" >Message:</label>
+                    <textarea aria-labelledby="label-message" name="message" placeholder="Your Message" required></textarea>
+                    <div class="form-footer">
+                        <div
+                            id="loading"
+                            hx-indicator
+                            class="loading-indicator"
+                            role="status"
+                            aria-live="polite"
+                        >
+                            <img src="/public/circle-stroke.svg"></img>
+                            Sending...
+                        </div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+        </dialog>
+
+        <nav class="footer">
+            <section>
+                <button command="show-modal" commandfor="contact-modal" >
+                    <img src="/public/send.svg" class="link-svg" alt="Open contact form modal"/>
+                </button>
+            </section>
+        </nav>
+    </body>
+</html>
