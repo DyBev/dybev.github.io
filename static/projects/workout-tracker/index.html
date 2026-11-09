@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html
     hx-boost="true"
+    hx-swap="innerHTML scroll:top"
 >
     <head>
         <title>Dylan Bevan</title>
@@ -48,75 +49,75 @@
                     <p>My General approach to this project is currently driven by 2 main factors, my need for a flagship project to share with my peers and use as an exploration ground and my need to track my workouts in the hopes of improving my consistency in the gym and track my progress, so a lot of the features are on a strictly need to have basis. As well as the obvious of reducing my costs to run this projects all my decisions take into account the cost aspect</p>
                     <p>Of course the project is built for me and ultimately I do not think that this project is something that is going to be my final flagship but for the time being it is great and will really help me in defining the types of standards I want my future work to follow</p>
                 </div>
+            </div>
+        </section>
 
-                <div class="projects-container">
-                    <div class="projects-header">
-                        <h2>Details</h2>
-                        <p class="sub-text font-secondary">Read about the details and choices I've made</p>
+        <section class="projects-container">
+            <div class="projects-header">
+                <h2>Details</h2>
+                <p class="sub-text font-secondary">Read about the details and choices I've made</p>
+            </div>
+            <div class="projects-list">
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Database</h3>
+                        <p class="sub-text font-secondary">AWS - DynamoDB</p>
                     </div>
-                    <div class="projects-list">
-                        <div class="project-container">
-                            <div class="project-header">
-                                <h3 class="font-highlight">Database</h3>
-                                <p class="sub-text font-secondary">AWS - DynamoDB</p>
-                            </div>
-                            <div class="project-content">
-                                <ui>
-                                    <li>Serverless Document based database, felt like a very easy choice when combined with my choice for Lambda functions in order to interact with the database as the AWS.Aurora service requires paying for the connection pool for Database<=>Lambda connections without overspending</li>
-                                    <li>PK/SK base making it easy to manage and fetch data, along with a global index on the workouts to allow for workout fetching</li>
-                                    <li>Multiple entries for: Workouts and Saved-Exercises</li>
-                                    <li>Data is structured in a way where I can migrate the database to a Relational style database</li>
-                                <ui>
-                            </div>
-                        </div>
-
-                        <div class="project-container">
-                            <div class="project-header">
-                                <h3 class="font-highlight">Front-end framework</h3>
-                                <p class="sub-text font-secondary">Expo React(Native)</p>
-                            </div>
-                            <div class="project-content">
-                                <ui>
-                                    <li>React is really becoming my bread and butter (well it has seemingly infected the entire internet) as a front-end framework and workflow React really does shine</li>
-                                    <li>I chose Expo React(Native) as I would like to have this project become a real app that could be installed on mobile devices, I think that would be the end goal of this project the 1.0 release would come with a App store release</li>
-                                    <li>My comfort with React and TS in general made it really easy to get the POC down (with the help of GenAI to get the volume of code down) and extending it has become a breeze</li>
-                                <ui>
-                            </div>
-                        </div>
-
-                        <div class="project-container">
-                            <div class="project-header">
-                                <h3 class="font-highlight">Backend (APIs)</h3>
-                                <p class="sub-text font-secondary">Golang, AWS ApiGateway + Lambda</p>
-                            </div>
-                            <div class="project-content">
-                                <ui>
-                                    <li>As with the DynamoDB a serverless service makes it a simple choice to solve the cost perspective</li>
-                                    <li>Golang as my language for choice my first experience with Golang was with my Fantasy Football app where I re-wrote my Python BE into Golang and that experience made it a really easy choice to pick it for this too. The thing I like about Golang is the error handling via the error return rather than TRY{}CATCH{} blocks, I find try catch blocks to be a passive way to handle errors, but Golang makes error handling an active thought in my opinion which has helped me as I've been able to add extra logging about the error locations etc when I've been attempting to debug things</li>
-                                <ui>
-                            </div>
-                        </div>
+                    <div class="project-content">
+                        <ui>
+                            <li>Serverless Document based database, felt like a very easy choice when combined with my choice for Lambda functions in order to interact with the database as the AWS.Aurora service requires paying for the connection pool for Database<=>Lambda connections without overspending</li>
+                            <li>PK/SK base making it easy to manage and fetch data, along with a global index on the workouts to allow for workout fetching</li>
+                            <li>Multiple entries for: Workouts and Saved-Exercises</li>
+                            <li>Data is structured in a way where I can migrate the database to a Relational style database</li>
+                        <ui>
                     </div>
                 </div>
 
-                <div class="projects-container">
-                    <div class="projects-header">
-                        <h2>What would you do if?</h2>
-                        <p class="sub-text font-secondary">Essentially an self-appointed FAQ</p>
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Front-end framework</h3>
+                        <p class="sub-text font-secondary">Expo React(Native)</p>
                     </div>
-                    <div class="projects-list">
-                        <div class="project-container">
-                            <div class="project-header">
-                                <h3 class="font-highlight">What would happen at volume <i>x</i>?</h3>
-                                <p class="sub-text font-secondary">All about costing!</p>
-                            </div>
-                            <div class="project-content">
-                                <p>Well at the moment as it stands with my "napkin" math, I shouldn't see any substantial costs until I hit about 10k users who are registering ~23 workouts per month</p>
-                                <p>My understanding is that at that volume is the best place for me to look towards changing up the infrastructure</p>
-                                <p>At this moment in time I would probably change to use a Bare-metal service as a starting point, porting the Golang code to be run as a single server would not take too much so that would be a easy first win</p>
-                                <p>I would still continue using the AWS DynamoDB service until I can do a full service performance test, if I'm going to start using bare-matal providers I would want to really consider the best choices for me before making any changes to the database</p>
-                            </div>
-                        </div>
+                    <div class="project-content">
+                        <ui>
+                            <li>React is really becoming my bread and butter (well it has seemingly infected the entire internet) as a front-end framework and workflow React really does shine</li>
+                            <li>I chose Expo React(Native) as I would like to have this project become a real app that could be installed on mobile devices, I think that would be the end goal of this project the 1.0 release would come with a App store release</li>
+                            <li>My comfort with React and TS in general made it really easy to get the POC down (with the help of GenAI to get the volume of code down) and extending it has become a breeze</li>
+                        <ui>
+                    </div>
+                </div>
+
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Backend (APIs)</h3>
+                        <p class="sub-text font-secondary">Golang, AWS ApiGateway + Lambda</p>
+                    </div>
+                    <div class="project-content">
+                        <ui>
+                            <li>As with the DynamoDB a serverless service makes it a simple choice to solve the cost perspective</li>
+                            <li>Golang as my language for choice my first experience with Golang was with my Fantasy Football app where I re-wrote my Python BE into Golang and that experience made it a really easy choice to pick it for this too. The thing I like about Golang is the error handling via the error return rather than TRY{}CATCH{} blocks, I find try catch blocks to be a passive way to handle errors, but Golang makes error handling an active thought in my opinion which has helped me as I've been able to add extra logging about the error locations etc when I've been attempting to debug things</li>
+                        <ui>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-container">
+            <div class="projects-header">
+                <h2>What would you do if?</h2>
+                <p class="sub-text font-secondary">Essentially an self-appointed FAQ</p>
+            </div>
+            <div class="projects-list">
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">What would happen at volume <i>x</i>?</h3>
+                        <p class="sub-text font-secondary">All about costing!</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Well at the moment as it stands with my "napkin" math, I shouldn't see any substantial costs until I hit about 10k users who are registering ~23 workouts per month</p>
+                        <p>My understanding is that at that volume is the best place for me to look towards changing up the infrastructure</p>
+                        <p>At this moment in time I would probably change to use a Bare-metal service as a starting point, porting the Golang code to be run as a single server would not take too much so that would be a easy first win</p>
+                        <p>I would still continue using the AWS DynamoDB service until I can do a full service performance test, if I'm going to start using bare-matal providers I would want to really consider the best choices for me before making any changes to the database</p>
                     </div>
                 </div>
             </div>
@@ -165,8 +166,13 @@
 
         <nav class="footer">
             <section>
-                <a href="/projects/workout-tracker">
-                    <img src="/public/chevron-right.svg" class="link-svg" alt="next page, experience: American Express"/>
+                <a href="/experience/american-express">
+                    <img src="/public/chevron-right.svg" class="link-svg rotate" alt="previous page, experience: American Express"/>
+                </a>
+                <div class="spacer"></div>
+                <p>2 / 2</p>
+                <a href="/portfolio-final">
+                    <img src="/public/chevron-right.svg" class="link-svg" alt="next page, portfolio: Thank you for reading"/>
                 </a>
                 <button command="show-modal" commandfor="contact-modal" >
                     <img src="/public/send.svg" class="link-svg" alt="Open contact form modal"/>

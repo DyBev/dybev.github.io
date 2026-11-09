@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html
+    hx-boost="true"
+    hx-swap="innerHTML scroll:top"
+>
+    <head>
+        <title>Dylan Bevan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800"
+        rel="stylesheet"
+        >
+        <link rel="stylesheet" href="/index.css">
+        <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
+    </head>
+    <body class="main fade-in">
+        <nav class="header">
+            <section>
+                <p class="no-break" >Dylan Bevan</p>
+                <div class="spacer" ></div>
+                <p>2026.10</p>
+                <a href="/" class="no-break" >/ portfolio</a>
+                <a href="/portfolio-final" class="no-break" >/ final</a>
+            </section>
+        </nav>
+
+        <section id="about">
+            <div class="section-header">
+                <h1 class="experience-header">Thank You</h1>
+                <div class="header-sub-section">
+                    <p class="no-break supporting-text">Software Engineer</p>
+                    <p class="no-break sub-text">London, UK</p>
+                    <p class="no-break sub-text font-secondary">51.50722° N, 0.12750° W</p>
+                    <!-- TEMP disable since I don't have it hosted <a href="" class="no-break sub-text">Download CV (PDF)</a> -->
+                </div>
+                <div class="world-map" >
+                    <image alt="" src="/public/map.svg" />
+                    <div class="overlay"></div>
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="paragraph-container">
+                    <p>Thank you for taking the time to go through my portfolio, I hope you have enjoyed the reading and you have gained <i>hopefully</i> a positive impression about me</p>
+                    <p>I am always striving to improve so my portfolio is a living portfolio and changes are always expected</p>
+                    <p>I hope you have been impressed enough to bookmark my page and visit again to nosey about what I have been up to</p>
+                </div>
+                <div class="image-container">
+                    <img alt="" src="/public/dylan.png" class="image-of-me" />
+                </div>
+            </div>
+        </section>
+
+        <section class="explore-more">
+            <div class="more-information-text-container">
+                <h2 class="more-information-header font-highlight">Want to explore more?</h2>
+                <p>Feel free to take a look around some more! I've created the portfolio to highlight what I think are the best projects of mine but you might be interested in finding what I'm trying to hide from you!</p>
+            </div>
+            <div class="more-information-link-container">
+                <a href="/experience" >
+                    <img alt="" src="/public/folders.svg" class="link-svg">
+                    <p>experience</p>
+                </a>
+                <a href="/projects" >
+                    <img alt="" src="/public/code-tag.svg" class="link-svg">
+                    <p>projects</p>
+                </a>
+                <a href="https://github.dybev.uk" >
+                    <img alt="" src="/public/git-branch.svg" class="link-svg">
+                    <p>github</p>
+                </a>
+                <a href="https://linkedin.dybev.uk" >
+                    <img alt="" src="/public/linked-in.svg" class="link-svg">
+                    <p>linkedin</p>
+                </a>
+            </div>
+            <div class="more-information-text-container">
+                <p>If you'd like to drop me a message feel free to fill out the contact form below and I will be able to respond to your email!</p>
+            </div>
+        </section>
+
+        <section
+            id="contact-modal"
+            class="contact-modal"
+        >
+            <section class="contact-header">
+                <h2>Contact</h2>
+            </section>
+            <section id="form-container">
+                <form
+                    class="contact-form"
+                    hx-post="/api/contact"
+                    hx-target="this"
+                    hx-encoding="json"
+                    hx-swap="outerHTML"
+                >
+                    <label id="label-name" >Name:</label>
+                    <input aria-labelledby="label-name" type="text" name="name" placeholder="Your Name" required/>
+                    <label id="label-email" >Email:</label>
+                    <input aria-labelledby="label-email" type="email" name="email" placeholder="Your Email" required/>
+                    <label id="label-message" >Message:</label>
+                    <textarea aria-labelledby="label-message" name="message" placeholder="Your Message" required></textarea>
+                    <div class="form-footer">
+                        <div
+                            id="loading"
+                            hx-indicator
+                            class="loading-indicator"
+                            role="status"
+                            aria-live="polite"
+                        >
+                            <img src="/public/circle-stroke.svg"></img>
+                            Sending...
+                        </div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </body>
+</html>
