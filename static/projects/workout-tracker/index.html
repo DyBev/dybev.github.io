@@ -64,12 +64,12 @@
                         <p class="sub-text font-secondary">AWS - DynamoDB</p>
                     </div>
                     <div class="project-content">
-                        <ui>
-                            <li>Serverless Document based database, felt like a very easy choice when combined with my choice for Lambda functions in order to interact with the database as the AWS.Aurora service requires paying for the connection pool for Database<=>Lambda connections without overspending</li>
+                        <ul>
+                            <li>Serverless Document based database, was a natural fit given my choice of Lambda functions</li>
                             <li>PK/SK base making it easy to manage and fetch data, along with a global index on the workouts to allow for workout fetching</li>
                             <li>Multiple entries for: Workouts and Saved-Exercises</li>
                             <li>Data is structured in a way where I can migrate the database to a Relational style database</li>
-                        <ui>
+                        </ul>
                     </div>
                 </div>
 
@@ -79,11 +79,11 @@
                         <p class="sub-text font-secondary">Expo React(Native)</p>
                     </div>
                     <div class="project-content">
-                        <ui>
+                        <ul>
                             <li>React is really becoming my bread and butter (well it has seemingly infected the entire internet) as a front-end framework and workflow React really does shine</li>
                             <li>I chose Expo React(Native) as I would like to have this project become a real app that could be installed on mobile devices, I think that would be the end goal of this project the 1.0 release would come with a App store release</li>
                             <li>My comfort with React and TS in general made it really easy to get the POC down (with the help of GenAI to get the volume of code down) and extending it has become a breeze</li>
-                        <ui>
+                        </ul>
                     </div>
                 </div>
 
@@ -93,10 +93,10 @@
                         <p class="sub-text font-secondary">Golang, AWS ApiGateway + Lambda</p>
                     </div>
                     <div class="project-content">
-                        <ui>
+                        <ul>
                             <li>As with the DynamoDB a serverless service makes it a simple choice to solve the cost perspective</li>
-                            <li>Golang as my language for choice my first experience with Golang was with my Fantasy Football app where I re-wrote my Python BE into Golang and that experience made it a really easy choice to pick it for this too. The thing I like about Golang is the error handling via the error return rather than TRY{}CATCH{} blocks, I find try catch blocks to be a passive way to handle errors, but Golang makes error handling an active thought in my opinion which has helped me as I've been able to add extra logging about the error locations etc when I've been attempting to debug things</li>
-                        <ui>
+                            <li>Golang as my language for choice my first experience with Golang was with my Fantasy Football app where I re-wrote my Python BE into Golang and that experience made it a really easy choice to pick it for this too. The thing I like about Golang is the error handling via the error return rather than TRY{}CATCH{} blocks, I find try catch blocks to be a passive way to handle errors, but Golang requires explicit error handling, making it an active part of development</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -163,6 +163,20 @@
                 </form>
             </section>
         </dialog>
+
+        <section class="link-wall">
+            <section class="internal-links">
+                <p>Links on this website</p>
+                <a href="/">Home</a>
+                <a href="/experience">Experience</a>
+                <a href="/projects">Projects</a>
+            </section>
+            <section class="external-links">
+                <p>Links away from this website</p>
+                <a href="https://linkedin.dybev.uk">Linkedin</a>
+                <a href="https://github.dybev.uk">Github</a>
+            </section>
+        </section>
 
         <nav class="footer">
             <section>

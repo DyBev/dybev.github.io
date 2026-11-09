@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html
+    hx-boost="true"
+    hx-swap="innerHTML scroll:top"
+>
+    <head>
+        <title>Dylan Bevan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800"
+        rel="stylesheet"
+        >
+        <link rel="stylesheet" href="/index.css">
+        <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
+    </head>
+    <body class="main fade-in">
+        <nav class="header">
+            <section>
+                <p class="no-break" >Dylan Bevan</p>
+                <div class="spacer" ></div>
+                <p>2026.10</p>
+                <a href="/" class="no-break" >/ portfolio</a>
+                <a href="/projects" class="no-break" >/ projects</a>
+                <a href="." class="no-break" >/ template.html</a>
+            </section>
+        </nav>
+
+        <section id="about">
+            <div class="section-header">
+                <h1 class="experience-header">Template</h1>
+                <div class="header-sub-section">
+                    <a href="https://github.com/dybev" class="no-break sub-text">Github repository</a>
+                </div>
+                <div class="world-map" >
+                    <image alt="" src="/public/map.svg" />
+                    <div class="overlay"></div>
+                </div>
+            </div>
+
+            <div class="pproject-content">
+                <div class="paragraph-container">
+                    <p>Naughty Naughty you've found my template file!</p>
+                </div>
+
+                <div class="paragraph-container">
+                    <p>A second paragraph container</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-container">
+            <div class="projects-header">
+                <h2>Details</h2>
+                <p class="sub-text font-secondary">Read about the details and choices I've made</p>
+            </div>
+            <div class="projects-list">
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Tech / Architecture Decision</h3>
+                        <p class="sub-text font-secondary">Name</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>list item</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="projects-container">
+            <div class="projects-header">
+                <h2>What would you do if?</h2>
+                <p class="sub-text font-secondary">Essentially an self-appointed FAQ</p>
+            </div>
+            <div class="projects-list">
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Question</h3>
+                        <p class="sub-text font-secondary">Some tldr</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Paragraph for the answer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <dialog
+            id="contact-modal"
+            class="contact-modal"
+        >
+            <section class="contact-header">
+                <h2>Contact</h2>
+                <button commandfor="contact-modal" command="close">
+                    <img src="/public/close.svg" alt="close" class="link-svg"/>
+                </button>
+            </section>
+            <section id="form-container">
+                <form
+                    class="contact-form"
+                    hx-post="/api/contact"
+                    hx-target="this"
+                    hx-encoding="json"
+                    hx-swap="outerHTML"
+                >
+                    <label id="label-name" >Name:</label>
+                    <input aria-labelledby="label-name" type="text" name="name" placeholder="Your Name" required/>
+                    <label id="label-email" >Email:</label>
+                    <input aria-labelledby="label-email" type="email" name="email" placeholder="Your Email" required/>
+                    <label id="label-message" >Message:</label>
+                    <textarea aria-labelledby="label-message" name="message" placeholder="Your Message" required></textarea>
+                    <div class="form-footer">
+                        <div
+                            id="loading"
+                            hx-indicator
+                            class="loading-indicator"
+                            role="status"
+                            aria-live="polite"
+                        >
+                            <img src="/public/circle-stroke.svg"></img>
+                            Sending...
+                        </div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+        </dialog>
+
+        <section class="link-wall">
+            <section class="internal-links">
+                <p>Links on this website</p>
+                <a href="/">Home</a>
+                <a href="/experience">Experience</a>
+                <a href="/projects">Projects</a>
+            </section>
+            <section class="external-links">
+                <p>Links away from this website</p>
+                <a href="https://linkedin.dybev.uk">Linkedin</a>
+                <a href="https://github.dybev.uk">Github</a>
+            </section>
+        </section>
+
+        <nav class="footer">
+            <section>
+                <a href="/">
+                    <img src="/public/chevron-right.svg" class="link-svg rotate" alt="previous page, type: name"/>
+                </a>
+                <div class="spacer"></div>
+                <p>2 / 2</p>
+                <a href="/">
+                    <img src="/public/chevron-right.svg" class="link-svg" alt="next page, type: name"/>
+                </a>
+                <button command="show-modal" commandfor="contact-modal" >
+                    <img src="/public/send.svg" class="link-svg" alt="Open contact form modal"/>
+                </button>
+            </section>
+        </nav>
+    </body>
+</html>

@@ -93,10 +93,6 @@ p, a {
     }
 }
 
-li {
-    margin-left: 1.5rem;
-}
-
 html, body {
     overflow-x: hidden;
 }
@@ -195,6 +191,22 @@ section {
 
     a {
         color: inherit;
+    }
+}
+
+section.link-wall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+
+    & section {
+        gap: 0.5rem;
+    }
+
+    @media(max-width: 1140px) {
+        max-width: 28rem;
+        grid-template-columns: 28rem;
     }
 }
 
@@ -429,6 +441,7 @@ section.projects-container {
         border: dashed 0.1rem rgb(var(--blue-highlight));
         border-radius: 0.5rem;
         padding: 0.5rem;
+        width: 100%;
 
         & h3 {
             font-size: 1.2rem;
