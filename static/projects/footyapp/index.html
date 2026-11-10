@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html
+    hx-boost="true"
+    hx-swap="innerHTML scroll:top"
+>
+    <head>
+        <title>Dylan Bevan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Quicksand:wght@300..700&display=swap&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800"
+        rel="stylesheet"
+        >
+        <link rel="stylesheet" href="/index.css">
+        <script src="https://unpkg.com/htmx.org@2.0.8/dist/htmx.min.js"></script>
+    </head>
+    <body class="main fade-in">
+        <nav class="header">
+            <section>
+                <p class="no-break" >Dylan Bevan</p>
+                <div class="spacer" ></div>
+                <p>2026.10</p>
+                <a href="/" class="no-break" >/ portfolio</a>
+                <a href="/projects" class="no-break" >/ projects</a>
+                <a href="." class="no-break" >/ footyapp</a>
+            </section>
+        </nav>
+
+        <section id="about">
+            <div class="section-header">
+                <h1 class="experience-header">Footyapp</h1>
+                <div class="world-map" >
+                    <image alt="" src="/public/map.svg" />
+                    <div class="overlay"></div>
+                </div>
+            </div>
+
+            <div class="pproject-content">
+                <div class="paragraph-container">
+                    <p>A fantasy football app built for a fantasy league that my friend was running, they wanted to detach themselves from the FPL format and have a bit more interaction between the league members</p>
+                    <p>Built on a core concept of a "Auction" where the entire league gets together and then place bids on each player where the league manager leading the auction</p>
+                    <p>Each player get's a total of of "300 million" to spend on bidding for players and a total of 15 players per team</p>
+                    <p>The league bidding happens 2/3 times per season depending on how the league was run sometimes the league members spent all of their cash in the first 2 auctions so the 3rd is skipped</p>
+                </div>
+
+                <div class="paragraph-container">
+                    <p>If members wanted to buy new players they would need to forefit a previous player to buy the new one, but of course there is no gurantee, since other players also have the opportunity to bid, as you can imagine there were a few late season upsets</p>
+                    <p>Sadly this is one of those projects that outgrew me, legacy decisions combined with me still learning and growing as an engineer, some decisions I made made it difficult to continue itterating and improving the core app</p>
+                    <p>I also ended getting bitten by the changes in the API provider, they made a change that meant that seasons past the 2024/2025 season were not available on the free plan</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-container">
+            <div class="projects-header">
+                <h2>Details</h2>
+                <p class="sub-text font-secondary">Read about the details and choices I've made</p>
+            </div>
+            <div class="projects-list">
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Database</h3>
+                        <p class="sub-text font-secondary">Google - Firebase:Firestore</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>Serverless Document based database it was a really nice choice with it's extensive API and it's batteries included approach meant it was really easy to integrate features like realtime updates</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="projects-container">
+            <div class="projects-header">
+                <h2>What would you do if?</h2>
+                <p class="sub-text font-secondary">Essentially an self-appointed FAQ</p>
+            </div>
+            <div class="projects-list">
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Question</h3>
+                        <p class="sub-text font-secondary">Some tldr</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Paragraph for the answer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <dialog
+            id="contact-modal"
+            class="contact-modal"
+        >
+            <section class="contact-header">
+                <h2>Contact</h2>
+                <button commandfor="contact-modal" command="close">
+                    <img src="/public/close.svg" alt="close" class="link-svg"/>
+                </button>
+            </section>
+            <section id="form-container">
+                <form
+                    class="contact-form"
+                    hx-post="/api/contact"
+                    hx-target="this"
+                    hx-encoding="json"
+                    hx-swap="outerHTML"
+                >
+                    <label id="label-name" >Name:</label>
+                    <input aria-labelledby="label-name" type="text" name="name" placeholder="Your Name" required/>
+                    <label id="label-email" >Email:</label>
+                    <input aria-labelledby="label-email" type="email" name="email" placeholder="Your Email" required/>
+                    <label id="label-message" >Message:</label>
+                    <textarea aria-labelledby="label-message" name="message" placeholder="Your Message" required></textarea>
+                    <div class="form-footer">
+                        <div
+                            id="loading"
+                            hx-indicator
+                            class="loading-indicator"
+                            role="status"
+                            aria-live="polite"
+                        >
+                            <img src="/public/circle-stroke.svg"></img>
+                            Sending...
+                        </div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+        </dialog>
+
+        <section class="link-wall">
+            <section class="internal-links">
+                <p>Links on this website</p>
+                <a href="/">Home</a>
+                <a href="/experience">Experience</a>
+                <a href="/projects">Projects</a>
+            </section>
+            <section class="external-links">
+                <p>Links away from this website</p>
+                <a href="https://linkedin.dybev.uk">Linkedin</a>
+                <a href="https://github.dybev.uk">Github</a>
+            </section>
+        </section>
+
+        <nav class="footer">
+            <section>
+                <!-- <a href="/experience/american-express"> -->
+                <!--     <img src="/public/chevron-right.svg" class="link-svg rotate" alt="previous page, experience: American Express"/> -->
+                <!-- </a> -->
+                <!-- <div class="spacer"></div> -->
+                <!-- <p>2 / 2</p> -->
+                <!-- <a href="/portfolio-final"> -->
+                <!--     <img src="/public/chevron-right.svg" class="link-svg" alt="next page, portfolio: Thank you for reading"/> -->
+                <!-- </a> -->
+                <button command="show-modal" commandfor="contact-modal" >
+                    <img src="/public/send.svg" class="link-svg" alt="Open contact form modal"/>
+                </button>
+            </section>
+        </nav>
+    </body>
+</html>
