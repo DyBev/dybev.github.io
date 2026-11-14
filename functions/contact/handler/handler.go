@@ -1,4 +1,4 @@
-package main
+package handler
 
 import (
 	"context"
@@ -22,7 +22,7 @@ var FormWithError = `<form
 	hx-swap="outerHTML"
 >
 	<div class="message-error">
-		<img src="./public/error-filled.svg"></img>
+		<img src="/public/error-filled.svg"></img>
 		Form data missing, or incorrectly filled
 	</div>
 	<label>Name:</label>
@@ -39,7 +39,7 @@ var FormWithError = `<form
 			role="status"
 			aria-live="polite"
 		>
-			<img src="./public/circle-stroke.svg"></img>
+			<img src="/public/circle-stroke.svg"></img>
 			Sending...
 		</div>
 		<button type="submit">Send</button>
@@ -47,12 +47,12 @@ var FormWithError = `<form
 </form>`
 
 var SuccessNotification = `<div class="message-success">
-	<img src="./public/checkmark-filled.svg"></img>
+	<img src="/public/checkmark-filled.svg"></img>
 	message sent successfully!
 </div>`
 
 var ErrorNotification = `<div class="message-error">
-	<img src="./public/error-filled.svg"></img>
+	<img src="/public/error-filled.svg"></img>
 	Something went wrong, please try again later
 </div>`
 

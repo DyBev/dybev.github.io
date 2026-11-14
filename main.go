@@ -4,14 +4,32 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strings"
 	"time"
+
+	contactHandler "dybev.uk/portfolio/functions/contact/handler"
 )
 
 func contactHandle(w http.ResponseWriter, r *http.Request) {
-	name := r.FormValue("name")
-	time.Sleep(time.Second * 10)
+	name := strings.ToLower(r.FormValue("name"))
+	message := strings.ToLower(r.FormValue("message"))
+
+	if message == "wait" {
+		time.Sleep(time.Second * 10)
+	}
+
+	if name == "error" {
+		w.Write([]byte(contactHandler.ErrorNotification))
+		return
+	}
+
+	if name == "form-error" {
+		w.Write([]byte(contactHandler.FormWithError))
+		return
+	}
+
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(name))
+	w.Write([]byte(contactHandler.SuccessNotification))
 }
 
 type notFoundInterceptorWriter struct {

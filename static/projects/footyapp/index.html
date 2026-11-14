@@ -66,10 +66,52 @@
                     <div class="project-content">
                         <ul>
                             <li>Serverless Document based database it was a really nice choice with it's extensive API and it's batteries included approach meant it was really easy to integrate features like realtime updates</li>
+                            <li>Easy intergation with the FE code made it very easy to intergate new pages and features to the app</li>
                         </ul>
                     </div>
                 </div>
 
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Backend</h3>
+                        <p class="sub-text font-secondary">POC - Python</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>Built out my initial POC for the backend in a locally run python script</li>
+                            <li>Pythons ease of use was an easy choice for a prototyping language</li>
+                            <li>Strong integration with SQL lite making it easy to manage and maintain scores</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Data Source</h3>
+                        <p class="sub-text font-secondary">api-football.com</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>At the time there a was a generous 100 per day calls on the free tier and it included the latest Premier league season</li>
+                            <li>Easy to use API with code samples for Python and Go available</li>
+                            <li>Had endpoints for the full league timetable individual matches individual teams and players making it easy to build out the necessary data for the app</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">Backend</h3>
+                        <p class="sub-text font-secondary">final implementation - Golang</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>After a year of running the updates manually I made the decision to re-write the BE to run autonomously using AWS-step functions(lambdas) I chose Golang for it type security and it's speed and ease of deployment to the AWS lambda ecosystem</li>
+                            <li>Strong typing made it easy to avoid any type errors, which would happen occasionally in the python codebase</li>
+                            <li>Go langs approach to errors as an active thought made it effortless to gracefully handle any errors with errors getting logged in cloudwatch it was easy to remediate any lingering issues</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -81,11 +123,27 @@
             <div class="projects-list">
                 <div class="project-container">
                     <div class="project-header">
-                        <h3 class="font-highlight">Question</h3>
-                        <p class="sub-text font-secondary">Some tldr</p>
+                        <h3 class="font-highlight">You would build it all again</h3>
+                        <p class="sub-text font-secondary">I really learned a lot from this project</p>
                     </div>
                     <div class="project-content">
-                        <p>Paragraph for the answer</p>
+                        <p>I think the biggest mistake I made when I built this was the lack of planning on my side</p>
+                        <p>The premise and the idea of the app was really simple but it's just a special UI to replace a google spreadsheet, it didn't feel like there was any features to the app itself, just a wrapper UI</p>
+                        <p>I think ideally I would flesh out some of the features for the app a bit more, like it would be nice for there to have been a "pre-auction" where people could pre-register interest for players and who they would be willing to drop for it, that would get revealed to everyone on the league manages appointed league auction day</p>
+                        <p>Or perhaps some features relating to the individual players themselves, for example seeing their performance on a match by match basis rather than a week by week basis</p>
+                    </div>
+                </div>
+
+                <div class="project-container">
+                    <div class="project-header">
+                        <h3 class="font-highlight">What do you think you learned the most</h3>
+                        <p class="sub-text font-secondary">Making use of managed services is a good idea</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Going into the project I was really excited about renting my own bare-metal server and deploying my own API + database there, hence why the initial POC was written with a locally run Python</p>
+                        <p>I really should have gone and done the leg work of research before I started my development, because once I realised the requirements and the challenges that come with self-hosting I had already done a lot of the difficult work of coding out the cron the update scripts etc</p>
+                        <p>The firebase decision felt like an "oh crap - I'm not ready for this" moment, but really I would not have learned that without the ambition</p>
+                        <p>Ultimately making judgement errors is human, and I much prefer the judgment errors happen in my own time rather than they happen in production infront of 10s of thousands of users who are relying on what you build to work</p>
                     </div>
                 </div>
             </div>

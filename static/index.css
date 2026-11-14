@@ -250,6 +250,11 @@ section.link-wall {
     }
 }
 
+.bottom-spacer {
+    min-height: 5rem;
+    min-width: 1rem;
+}
+
 .about-content {
     display: flex;
     flex-direction: row;

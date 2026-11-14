@@ -1,4 +1,4 @@
-module github.com/dybev/github.dybev.io
+module dybev.uk/portfolio
 
 go 1.26.7
 
