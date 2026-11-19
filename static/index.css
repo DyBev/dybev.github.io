@@ -367,6 +367,7 @@ section.link-wall {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
 
     & a {
         display: flex;
@@ -654,6 +655,7 @@ dialoge.contact-modal {
 
 .spacer {
     flex-grow: 1;
+    margin-right: -0.4rem;
 }
 
 .main {
