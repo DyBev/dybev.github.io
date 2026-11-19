@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 	"time"
 
@@ -70,6 +71,7 @@ func (rw *notFoundInterceptorWriter) Write(b []byte) (int, error) {
 
 func StaticSiteHandler(h, notFoundHandler http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		start := time.Now()
 		fmt.Printf("Handling Request: %s %s\n", r.Method, r.URL)
 		w = &notFoundInterceptorWriter{
 			rw:              w,
@@ -78,12 +80,19 @@ func StaticSiteHandler(h, notFoundHandler http.Handler) http.Handler {
 			r:               r,
 		}
 		h.ServeHTTP(w, r)
+		fmt.Printf("Handled Request: %s %s in %s\n", r.Method, r.URL, time.Since(start))
 	})
 }
 
 func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Handling 404 for %s %s: ", r.Method, r.URL)
-	if r.URL.Path == "/not-found" {
+	urlPath := r.URL.Path
+	if urlPath == "/favicon.ico" {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if urlPath == "/not-found" {
 		fmt.Print("non-HTMX request\n")
 		http.ServeFile(w, r, "./static/404.html")
 		return
@@ -101,6 +110,7 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	localIP := os.Getenv("LOCAL_IP")
 	fs := http.FileServer(http.Dir("./static"))
 
 	mux := http.NewServeMux()
@@ -112,7 +122,8 @@ func main() {
 		Handler: mux,
 	}
 
-	log.Printf("Starting HTTPS file server at https://localhost:8080 (serving ./static)")
+	log.Printf("Starting HTTP file server at http://localhost:8080/ (serving ./static)")
+	log.Printf("Also available on local network with http://%s:8080/", localIP)
 	log.Printf("listening on %s", srv.Addr)
 	log.Fatal(srv.ListenAndServe())
 }

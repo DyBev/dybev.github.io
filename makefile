@@ -4,7 +4,7 @@ GOOS := linux
 GOARCH := arm64
 
 run:
-	CGO_ENABLED=$(CGO_ENABLED) go run ./main.go
+	LOCAL_IP=$$(hostname -I | awk '{print $$1}') CGO_ENABLED=$(CGO_ENABLED) go run ./main.go
 
 list:
 	./manage.sh list
